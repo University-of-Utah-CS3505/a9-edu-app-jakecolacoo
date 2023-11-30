@@ -29,7 +29,7 @@ Form::~Form()
 void Form::on_pushButton_clicked()
 {
     this->hide();
-
-
+    emit mainWindowComeBack();
+    // MainOne.show();
+    // MainOne.player->stop();
 }
-

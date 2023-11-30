@@ -26,7 +26,7 @@ private:
     Form otherWindow;
     QMediaPlayer *player;
     QAudioOutput * aud;
-// public slots:
-//     void stopMusicPlayer();
+public slots:
+    void mainBack();
 };
 #endif // MAINWINDOW_H

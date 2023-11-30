@@ -3,6 +3,7 @@
 
 #include <QWidget>
 
+
 namespace Ui {
 class Form;
 }
@@ -20,6 +21,9 @@ private slots:
 
 private:
     Ui::Form *ui;
+signals:
+    void mainWindowComeBack();
+
 };
 
 #endif // FORM_H
