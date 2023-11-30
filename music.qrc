@@ -1,0 +1,50 @@
+<RCC>
+    <qresource prefix="/">
+        <file>WillieSmith_EchoesOfSpring.mp3</file>
+        <file>WhiteStripes_SevenNationArmy.mp3</file>
+        <file>VeraLynn_We_llMeetAgain.mp3</file>
+        <file>ThroughTheWire.mp3</file>
+        <file>TheSupremes_StopintheNameofLove.mp3</file>
+        <file>TheEverlyBrothers_AllIHavetoDoIsDream.mp3</file>
+        <file>TheBeatles_HereComesTheSun.mp3</file>
+        <file>StevieWonder_SirDuke.mp3</file>
+        <file>SidneyBechet_WildCatBlues.mp3</file>
+        <file>Ramones_BlitzkriegBop.mp3</file>
+        <file>PublicEnemy_FightthePower.mp3</file>
+        <file>Prince_Kiss.mp3</file>
+        <file>OutKast_HeyYa.mp3</file>
+        <file>Oasis_DontLookBackInAnger.mp3</file>
+        <file>Nirvana_SmellsLikeTeenSpirit.mp3</file>
+        <file>N.K.COLE_L.O.V.E.mp3</file>
+        <file>MichaelJacson_BeatIt.mp3</file>
+        <file>Madonna_MaterialGirl.mp3</file>
+        <file>LouisArmstrong_BasinStreetBlues.mp3</file>
+        <file>Louis Armstrong - What A Wonderful World.mp3</file>
+        <file>LittleRichard_TuttiFruti.mp3</file>
+        <file>LedZeppelin_ImmigrantSong.mp3</file>
+        <file>LadyGaga_BadRomance.mp3</file>
+        <file>KingOliver_DoctorJazz.mp3</file>
+        <file>JohnnyCash_IWalkTheLine.mp3</file>
+        <file>JimiHendrix_PurpleHaze.mp3</file>
+        <file>JellyRollMorton_HonkyTonkBlues.mp3</file>
+        <file>JamesBrown_IGotYou(IFeelGood).mp3</file>
+        <file>GloriaGaynor_IWillSurvive.mp3</file>
+        <file>GlenMiller_IntheMood.mp3</file>
+        <file>FrankSinatra_FlyMeToTheMoon.mp3</file>
+        <file>ElvisPresley_HoundDog.mp3</file>
+        <file>EllaFitzgerald_DreamALittleDreamOfMe.mp3</file>
+        <file>EdithPiaf_LaVieEnRose.mp3</file>
+        <file>DukeEllington_Caravan.mp3</file>
+        <file>DaftPunk_OneMoreTime.mp3</file>
+        <file>Chuck_Berry_-_Johnny_B_Goode.mp3</file>
+        <file>BruceSpringsteen_BornToRun.mp3</file>
+        <file>BritneySpears_BabyOneMoreTime.mp3</file>
+        <file>BobMarley_CouldYouBeLoved.mp3</file>
+        <file>BobDylan_LikeARollingStone.mp3</file>
+        <file>BingCrosby_ISurrenderDear.mp3</file>
+        <file>BillieHoliday_GodBlessTheChild.mp3</file>
+        <file>Biggie_MoMoneyMoProblems.mp3</file>
+        <file>BennyGoodman_DontBeThatWay.mp3</file>
+        <file>2Pac_CaliforniaLove.mp3</file>
+    </qresource>
+</RCC>
