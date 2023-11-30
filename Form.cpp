@@ -11,8 +11,14 @@ Form::Form(QWidget *parent) :
     // Load the image from the resource
     QImage backgroundImage(":/Stage.png");
 
+    // Convert the QImage to QPixmap
+    QPixmap backgroundPixmap = QPixmap::fromImage(backgroundImage);
+
+    // Scale the QPixmap to the size of the widget
+    backgroundPixmap = backgroundPixmap.scaled(this->size(), Qt::IgnoreAspectRatio);
+
     // Set the pixmap for the palette using the image
-    palette.setBrush(QPalette::Window, QBrush(backgroundImage));
+    palette.setBrush(QPalette::Window, QBrush(backgroundPixmap));
 
     // Apply the palette to the widget
     this->setPalette(palette);
@@ -20,6 +26,9 @@ Form::Form(QWidget *parent) :
     // Make sure the widget background is set to be drawn
     this->setAutoFillBackground(true);
 }
+
+
+
 
 Form::~Form()
 {
