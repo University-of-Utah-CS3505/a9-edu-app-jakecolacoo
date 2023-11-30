@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     aud = new QAudioOutput;
     player->setAudioOutput(aud);
-    player->setSource(QUrl::fromEncoded("qrc:/music.mp3")); // Assuming the music file is named "music.mp3" and is in the root of the resource file
+    player->setSource(QUrl::fromEncoded("qrc:/2Pac_CaliforniaLove.mp3")); // Assuming the music file is named "music.mp3" and is in the root of the resource file
     aud->setVolume(100);
     connect(&otherWindow, &Form::mainWindowComeBack, this, &MainWindow::mainBack);
 }
