@@ -19,7 +19,24 @@ public:
     //Form* formInstance;
 
 private slots:
-    void on_pushButton_clicked();
+
+    void on_button1920_clicked();
+
+    void on_button1930_clicked();
+
+    void on_button1940_clicked();
+
+    void on_button1950_clicked();
+
+    void on_button1960_clicked();
+
+    void on_button1970_clicked();
+
+    void on_button1980_clicked();
+
+    void on_button1990_clicked();
+
+    void on_button2000_clicked();
 
 private:
     Ui::MainWindow *ui;

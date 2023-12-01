@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>PixeloidMono-d94EV.ttf</file>
+        <file>PixeloidSansBold-PKnYd.ttf</file>
+        <file>PixeloidSans-mLxMm.ttf</file>
+    </qresource>
+</RCC>

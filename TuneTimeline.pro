@@ -27,6 +27,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
+    font.qrc \
+    icon.qrc \
     music.qrc \
     stages.qrc
 

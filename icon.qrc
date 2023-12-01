@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>1920sIcon.jpg</file>
+        <file>1930sIcon.jpg</file>
+        <file>1940sIcon.jpg</file>
+        <file>1950sIcon.jpg</file>
+        <file>1960sIcon.jpg</file>
+        <file>1970sIcon.jpg</file>
+        <file>1980sIcon.jpg</file>
+        <file>1990sIcon.jpg</file>
+        <file>2000sIcon.jpg</file>
+    </qresource>
+</RCC>

@@ -13,8 +13,14 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="iconSize">
+   <size>
+    <width>24</width>
+    <height>24</height>
+   </size>
+  </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="button1920">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -24,10 +30,20 @@
      </rect>
     </property>
     <property name="text">
-     <string>Show Widget</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="icon.qrc">
+      <normaloff>:/1920sIcon.jpg</normaloff>:/1920sIcon.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>130</width>
+      <height>130</height>
+     </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="button1930">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -37,10 +53,20 @@
      </rect>
     </property>
     <property name="text">
-     <string>Show Widget</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="icon.qrc">
+      <normaloff>:/1930sIcon.jpg</normaloff>:/1930sIcon.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>130</width>
+      <height>130</height>
+     </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="button1940">
     <property name="geometry">
      <rect>
       <x>170</x>
@@ -50,10 +76,20 @@
      </rect>
     </property>
     <property name="text">
-     <string>Show Widget</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="icon.qrc">
+      <normaloff>:/1940sIcon.jpg</normaloff>:/1940sIcon.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>130</width>
+      <height>130</height>
+     </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="button1950">
     <property name="geometry">
      <rect>
       <x>240</x>
@@ -63,10 +99,20 @@
      </rect>
     </property>
     <property name="text">
-     <string>Show Widget</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="icon.qrc">
+      <normaloff>:/1950sIcon.jpg</normaloff>:/1950sIcon.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>130</width>
+      <height>130</height>
+     </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_5">
+   <widget class="QPushButton" name="button1960">
     <property name="geometry">
      <rect>
       <x>330</x>
@@ -76,10 +122,20 @@
      </rect>
     </property>
     <property name="text">
-     <string>Show Widget</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="icon.qrc">
+      <normaloff>:/1960sIcon.jpg</normaloff>:/1960sIcon.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>130</width>
+      <height>130</height>
+     </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_6">
+   <widget class="QPushButton" name="button1970">
     <property name="geometry">
      <rect>
       <x>400</x>
@@ -89,10 +145,20 @@
      </rect>
     </property>
     <property name="text">
-     <string>Show Widget</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="icon.qrc">
+      <normaloff>:/1970sIcon.jpg</normaloff>:/1970sIcon.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>130</width>
+      <height>130</height>
+     </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_7">
+   <widget class="QPushButton" name="button1980">
     <property name="geometry">
      <rect>
       <x>490</x>
@@ -102,10 +168,20 @@
      </rect>
     </property>
     <property name="text">
-     <string>Show Widget</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="icon.qrc">
+      <normaloff>:/1980sIcon.jpg</normaloff>:/1980sIcon.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>130</width>
+      <height>130</height>
+     </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_8">
+   <widget class="QPushButton" name="button1990">
     <property name="geometry">
      <rect>
       <x>560</x>
@@ -115,10 +191,20 @@
      </rect>
     </property>
     <property name="text">
-     <string>Show Widget</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="icon.qrc">
+      <normaloff>:/1990sIcon.jpg</normaloff>:/1990sIcon.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>130</width>
+      <height>130</height>
+     </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_9">
+   <widget class="QPushButton" name="button2000">
     <property name="geometry">
      <rect>
       <x>660</x>
@@ -128,7 +214,17 @@
      </rect>
     </property>
     <property name="text">
-     <string>Show Widget</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="icon.qrc">
+      <normaloff>:/2000sIcon.jpg</normaloff>:/2000sIcon.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>130</width>
+      <height>130</height>
+     </size>
     </property>
    </widget>
    <widget class="QLabel" name="label">
@@ -139,6 +235,11 @@
       <width>58</width>
       <height>16</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Pixeloid Sans</family>
+     </font>
     </property>
     <property name="text">
      <string>1920's</string>
@@ -268,12 +369,14 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>37</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="icon.qrc"/>
+ </resources>
  <connections/>
 </ui>
