@@ -13,6 +13,13 @@ MainWindow::MainWindow(QWidget *parent)
     player->setAudioOutput(aud);
     aud->setVolume(100);
     connect(&otherWindow, &Form::mainWindowComeBack, this, &MainWindow::mainBack);
+
+
+    int id = QFontDatabase::addApplicationFont(":/PixeloidSans-mLxMm.ttf");
+    QString family = QFontDatabase::applicationFontFamilies(id).at(0);
+    QFont font(family);
+    font.setStyleHint(QFont::Monospace);
+    QApplication::setFont(font);
 }
 
 MainWindow::~MainWindow()
