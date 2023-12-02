@@ -63,7 +63,7 @@ void Form::Stuffs1920(){
     QPixmap pix2(":/2000sIcon.jpg");
     ui->sprite2->setPixmap(pix2.scaled(w,h,Qt::KeepAspectRatio));
 
-    QPixmap pix3(":/I_forgot.png");
+    QPixmap pix3(":/Bob Marley Sprite.png");
     ui->sprite3->setPixmap(pix3.scaled(w,h,Qt::KeepAspectRatio));
 
     QPixmap pix4(":/Mariah_Carey.png");
