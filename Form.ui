@@ -72,33 +72,33 @@
    <property name="maximumSize">
     <size>
      <width>16777215</width>
-     <height>24</height>
+     <height>32</height>
     </size>
    </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
    </property>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="music1">
     <property name="text">
      <string>Kanye</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="music2">
     <property name="text">
      <string>MJ</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="music3">
     <property name="text">
      <string>Mario</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_6">
+   <widget class="QPushButton" name="music4">
     <property name="text">
      <string>Sam</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_7">
+   <widget class="QPushButton" name="music5">
     <property name="text">
      <string>Big dick</string>
     </property>
@@ -116,27 +116,27 @@
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
    </property>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="sprite1">
     <property name="text">
      <string>TextLabel</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="sprite2">
     <property name="text">
      <string>TextLabel</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_4">
+   <widget class="QLabel" name="sprite3">
     <property name="text">
      <string>TextLabel</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_5">
+   <widget class="QLabel" name="sprite4">
     <property name="text">
      <string>TextLabel</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_6">
+   <widget class="QLabel" name="sprite5">
     <property name="text">
      <string>TextLabel</string>
     </property>

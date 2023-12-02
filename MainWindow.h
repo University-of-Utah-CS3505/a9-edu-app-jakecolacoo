@@ -1,12 +1,14 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "Form.h"
 #include <QMainWindow>
 #include <QtMultiMedia/QtMultiMedia>
+#include "Form.h"
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
+namespace Ui {
+class MainWindow;
+}
 QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
@@ -40,10 +42,13 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    Form otherWindow;
+    Form* otherWindow;
     QMediaPlayer *player;
-    QAudioOutput * aud;
+    QAudioOutput *aud;
 public slots:
     void mainBack();
+
+signals:
+    void clicked1920();
 };
 #endif // MAINWINDOW_H

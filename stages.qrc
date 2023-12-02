@@ -2,5 +2,10 @@
     <qresource prefix="/">
         <file>Stage.png</file>
         <file>music.mp3</file>
+        <file>1990sIcon.jpg</file>
+        <file>2000sIcon.jpg</file>
+        <file>Cheryl_James.png</file>
+        <file>I_forgot.png</file>
+        <file>Mariah_Carey.png</file>
     </qresource>
 </RCC>
