@@ -11,11 +11,13 @@ CONFIG += resources_big
 SOURCES += \
     Form.cpp \
     main.cpp \
-    MainWindow.cpp
+    MainWindow.cpp \
+    stagecreate.cpp
 
 HEADERS += \
     Form.h \
-    MainWindow.h
+    MainWindow.h \
+    stagecreate.h
 
 FORMS += \
     Form.ui \

@@ -172,7 +172,7 @@
     </property>
     <property name="icon">
      <iconset resource="icon.qrc">
-      <normaloff>:/1980sIcon.jpg</normaloff>:/1980sIcon.jpg</iconset>
+      <normaloff>:/1980sIcon.png</normaloff>:/1980sIcon.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -369,7 +369,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>24</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

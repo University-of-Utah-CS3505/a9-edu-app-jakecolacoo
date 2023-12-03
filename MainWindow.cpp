@@ -30,88 +30,92 @@ MainWindow::~MainWindow()
 void MainWindow::mainBack()
 {
     this->show();
-    player->stop();
+//    player->stop();
 }
 
 void MainWindow::on_button1920_clicked()
 {
     this->close();
     otherWindow->show();
-    player->setSource(QUrl::fromEncoded("qrc:/2Pac_CaliforniaLove.mp3"));
-    //player->play();
-
-    //clicked 1920s stuff
-    emit clicked1920();
+    emit eraChange(2);
 }
 
 void MainWindow::on_button1930_clicked()
 {
     this->close();
     otherWindow->show();
-    player->setSource(QUrl::fromEncoded("qrc:/Louis Armstrong - What A Wonderful World.mp3"));
-    player->play();
+//    player->setSource(QUrl::fromEncoded("qrc:/Louis Armstrong - What A Wonderful World.mp3"));
+//    player->play();
     //emit clicked1930();
+    emit eraChange(3);
 }
 
 void MainWindow::on_button1940_clicked()
 {
     this->close();
     otherWindow->show();
-    player->setSource(QUrl::fromEncoded("qrc:/JohnnyCash_IWalkTheLine.mp3"));
-    player->play();
+//    player->setSource(QUrl::fromEncoded("qrc:/JohnnyCash_IWalkTheLine.mp3"));
+//    player->play();
     //emit clicked1940();
+    emit eraChange(4);
 }
 
 void MainWindow::on_button1950_clicked()
 {
     this->close();
     otherWindow->show();
-    player->setSource(QUrl::fromEncoded("qrc:/N.K.COLE_L.O.V.E.mp3"));
-    player->play();
+//    player->setSource(QUrl::fromEncoded("qrc:/N.K.COLE_L.O.V.E.mp3"));
+//    player->play();
     //emit clicked1950();
+    emit eraChange(5);
 }
 
 void MainWindow::on_button1960_clicked()
 {
     this->close();
     otherWindow->show();
-    player->setSource(QUrl::fromEncoded("qrc:/SidneyBechet_WildCatBlues.mp3"));
-    player->play();
+//    player->setSource(QUrl::fromEncoded("qrc:/SidneyBechet_WildCatBlues.mp3"));
+//    player->play();
     //emit clicked1960();
+    emit eraChange(6);
 }
 
 void MainWindow::on_button1970_clicked()
 {
     this->close();
     otherWindow->show();
-    player->setSource(QUrl::fromEncoded("qrc:/TheBeatles_HereComesTheSun.mp3"));
-    player->play();
+//    player->setSource(QUrl::fromEncoded("qrc:/TheBeatles_HereComesTheSun.mp3"));
+//    player->play();
     //emit clicked1970();
+    emit eraChange(7);
 }
 
 void MainWindow::on_button1980_clicked()
 {
     this->close();
     otherWindow->show();
-    player->setSource(QUrl::fromEncoded("qrc:/MichaelJacson_BeatIt.mp3"));
-    player->play();
+//    player->setSource(QUrl::fromEncoded("qrc:/MichaelJacson_BeatIt.mp3"));
+//    player->play();
     //emit clicked1980();
+    emit eraChange(8);
 }
 
 void MainWindow::on_button1990_clicked()
 {
     this->close();
     otherWindow->show();
-    player->setSource(QUrl::fromEncoded("qrc:/Oasis_DontLookBackInAnger.mp3"));
-    player->play();
+//    player->setSource(QUrl::fromEncoded("qrc:/Oasis_DontLookBackInAnger.mp3"));
+//    player->play();
     //emit clicked1990();
+    emit eraChange(9);
 }
 
 void MainWindow::on_button2000_clicked()
 {
     this->close();
     otherWindow->show();
-    player->setSource(QUrl::fromEncoded("qrc:/DaftPunk_OneMoreTime.mp3"));
-    player->play();
+//    player->setSource(QUrl::fromEncoded("qrc:/DaftPunk_OneMoreTime.mp3"));
+//    player->play();
     //emit clicked2000();
+    emit eraChange(0);
 }
