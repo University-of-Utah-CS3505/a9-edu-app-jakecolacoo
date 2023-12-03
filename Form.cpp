@@ -1,3 +1,8 @@
+/*
+ * View class of the stage
+ * Use to set up the sprites and all other UI stuff
+*/
+
 #include "Form.h"
 #include "ui_Form.h"
 #include "mainwindow.h"

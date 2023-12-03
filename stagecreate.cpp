@@ -1,3 +1,11 @@
+/*
+ * Model class to store the information of chosen era
+ * So that the Form class only need to set up stuff that
+ * send from this class, and when need change the sprites
+ * path and all other informations, we can simply change in this
+ * class, so it can prevent affecting other code
+*/
+
 #include "stagecreate.h"
 
 stageCreate::stageCreate(QWidget *parent)
