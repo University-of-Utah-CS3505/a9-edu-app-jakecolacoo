@@ -6,17 +6,28 @@ stageCreate::stageCreate(QWidget *parent)
 
 }
 
+// Set era by the era identity number
+// Such that : 0 is 2000's
+//             2 is 1920's
+//             3 is 1930's and so on
 void stageCreate::setEra(int era){
     switch (era) {
     case 0:
+        // Set sprites paths and corresponding names(same as the rest cases)
         imagePaths = {":/Mariah_Carey.png", ":/I_forgot.png", ":/Cheryl_James.png", ":/2000sIcon.jpg", ":/1990sIcon.jpg"};
         names = {"0-1", "0-2", "0-3", "0-4", "0-5"};
+
+        //set musics for corresponding buttons(same as the rest cases)
         m1 = "qrc:/Biggie_MoMoneyMoProblems.mp3";
         m2 = "qrc:/BobDylan_LikeARollingStone.mp3";
         m3 = "qrc:/DaftPunk_OneMoreTime.mp3";
         m4 = "qrc:/BingCrosby_ISurrenderDear.mp3";
         m5 = "qrc:/DukeEllington_Caravan.mp3";
+
+        //send all musication sprite and names(same as the rest cases)
         emit sendInfor(imagePaths, names);
+
+        //send background music(same as the rest cases)
         emit playMusic("qrc:/2Pac_CaliforniaLove.mp3");
         break;
     case 2:

@@ -10,8 +10,11 @@ public:
     explicit stageCreate(QWidget *parent = nullptr);
 
 private:
+    //sprite paths
     QStringList imagePaths;
+    //Names of musication
     QStringList names;
+    //5 music path
     QByteArray m1;
     QByteArray m2;
     QByteArray m3;

@@ -48,6 +48,7 @@ Form::~Form()
     delete ui;
 }
 
+//When the go back button clicked
 void Form::on_pushButton_clicked()
 {
     this->close();
@@ -57,9 +58,12 @@ void Form::on_pushButton_clicked()
     // MainOne.player->stop();
 }
 
+//use to set the current era's musication sprites and names
 void Form::setEra(QStringList image, QStringList names){
+    //Size of sprites, can be adjust by need
     int w = ui->sprite1->width();
     int h = ui->sprite1->height();
+
     for (int i = 0; i < 5; ++i) {
         // build QLabel and QPushButton name
         QString labelName = QString("sprite%1").arg(i + 1);
@@ -78,6 +82,7 @@ void Form::setEra(QStringList image, QStringList names){
         if (button && i < names.size()) {
             // set QPushButton text
             button->setText(names[i]);
+            //connect each button to corresponding music
             connect(button, &QPushButton::clicked, this, [this, i]() {
                 stage->play(i+1);
             });
@@ -85,6 +90,7 @@ void Form::setEra(QStringList image, QStringList names){
     }
 }
 
+//Make the player to play the music at the path
 void Form::playMusic(QByteArray path){
     musicPlayer->setSource(QUrl::fromEncoded(path));
     musicPlayer->play();
