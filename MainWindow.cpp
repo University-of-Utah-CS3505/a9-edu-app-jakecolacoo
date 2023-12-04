@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
     , otherWindow(new Form(this))
+    , quizWindow(new Quiz(this))
     , player(new QMediaPlayer(this))
 {
     ui->setupUi(this);

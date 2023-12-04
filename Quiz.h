@@ -26,12 +26,6 @@ private slots:
 
 
 public slots:
-//    void Stuffs1920();
-    void setEra(QStringList image, QStringList names);
-
-    void playMusic(QByteArray path);
-
-    void setInfoBar(QString filePath);
 
 private:
     Ui::Quiz *ui;

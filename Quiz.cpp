@@ -15,35 +15,35 @@ Quiz::Quiz(MainWindow* mainWindow,QWidget *parent)
     , musicPlayer(new QMediaPlayer(this))
 {
     ui->setupUi(this);
-    QPalette palette;
+//    QPalette palette;
 
-    // Load the image from the resource
-    QImage backgroundImage(":/Stage.png");
+//    // Load the image from the resource
+//    QImage backgroundImage(":/Stage.png");
 
-    // Convert the QImage to QPixmap
-    QPixmap backgroundPixmap = QPixmap::fromImage(backgroundImage);
+//    // Convert the QImage to QPixmap
+//    QPixmap backgroundPixmap = QPixmap::fromImage(backgroundImage);
 
-    // Scale the QPixmap to the size of the widget
-    backgroundPixmap = backgroundPixmap.scaled(this->size(), Qt::IgnoreAspectRatio);
+//    // Scale the QPixmap to the size of the widget
+//    backgroundPixmap = backgroundPixmap.scaled(this->size(), Qt::IgnoreAspectRatio);
 
-    // Set the pixmap for the palette using the image
-    palette.setBrush(QPalette::Window, QBrush(backgroundPixmap));
+//    // Set the pixmap for the palette using the image
+//    palette.setBrush(QPalette::Window, QBrush(backgroundPixmap));
 
-    // Apply the palette to the widget
-    this->setPalette(palette);
+//    // Apply the palette to the widget
+//    this->setPalette(palette);
 
-    // Make sure the widget background is set to be drawn
-    this->setAutoFillBackground(true);
+//    // Make sure the widget background is set to be drawn
+//    this->setAutoFillBackground(true);
 
-    int id = QFontDatabase::addApplicationFont(":/PixeloidSans-mLxMm.ttf");
-    QString family = QFontDatabase::applicationFontFamilies(id).at(0);
-    QFont font(family);
-    font.setStyleHint(QFont::Monospace);
-    ui->question->setFont(font);
+//    int id = QFontDatabase::addApplicationFont(":/PixeloidSans-mLxMm.ttf");
+//    QString family = QFontDatabase::applicationFontFamilies(id).at(0);
+//    QFont font(family);
+//    font.setStyleHint(QFont::Monospace);
+//    ui->question->setFont(font);
 
-    musicAud = new QAudioOutput;
-    musicPlayer->setAudioOutput(musicAud);
-    musicAud->setVolume(60);
+//    musicAud = new QAudioOutput;
+//    musicPlayer->setAudioOutput(musicAud);
+//    musicAud->setVolume(60);
 
 
 //    connect(m_mainWindow, &MainWindow::clicked1920, this, &Form::Stuffs1920);
