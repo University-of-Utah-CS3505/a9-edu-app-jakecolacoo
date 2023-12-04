@@ -31,6 +31,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RESOURCES += \
     font.qrc \
     icon.qrc \
+    info.qrc \
     music.qrc \
     stages.qrc
 

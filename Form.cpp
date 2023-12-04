@@ -36,6 +36,11 @@ Form::Form(MainWindow* mainWindow,QWidget *parent)
     // Make sure the widget background is set to be drawn
     this->setAutoFillBackground(true);
 
+    int id = QFontDatabase::addApplicationFont(":/PixeloidSans-mLxMm.ttf");
+    QString family = QFontDatabase::applicationFontFamilies(id).at(0);
+    QFont font(family);
+    font.setStyleHint(QFont::Monospace);
+    ui->label->setFont(font);
 
     musicAud = new QAudioOutput;
     musicPlayer->setAudioOutput(musicAud);
@@ -46,6 +51,7 @@ Form::Form(MainWindow* mainWindow,QWidget *parent)
     connect(m_mainWindow, &MainWindow::eraChange, stage, &stageCreate::setEra);
     connect(stage, &stageCreate::sendInfor, this, &Form::setEra);
     connect(stage, &stageCreate::playMusic, this, &Form::playMusic);
+    connect(stage, &stageCreate::sendFileForInfoBar, this, &Form::setInfoBar);
 }
 
 Form::~Form()
@@ -99,4 +105,21 @@ void Form::setEra(QStringList image, QStringList names){
 void Form::playMusic(QByteArray path){
     musicPlayer->setSource(QUrl::fromEncoded(path));
     musicPlayer->play();
+}
+
+void Form::setInfoBar(QString filePath) {
+    QFile file(filePath);
+
+    if (!file.exists()) {
+        qDebug() << "File does not exist";
+    } else if (!file.permissions().testFlag(QFileDevice::ReadUser)) {
+        qDebug() << "Read permissions denied";
+    } else if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qDebug() << "Failed to open file: " << file.errorString();
+    } else {
+        QTextStream in(&file);
+        QString text = in.readAll();
+
+        ui->label->setText(text);
+    }
 }
