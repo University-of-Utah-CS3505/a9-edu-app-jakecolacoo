@@ -46,8 +46,16 @@ void stageCreate::setEra(int era){
         m3 = "qrc:/DukeEllington_Caravan.mp3";
         m4 = "qrc:/BingCrosby_ISurrenderDear.mp3";
         m5 = "qrc:/DaftPunk_OneMoreTime.mp3";
+
+        artist1Info = ":/WillySmithInfo.txt";
+        artist2Info = ":/JellyRollInfo.txt";
+        artist3Info = ":/LouisArmstrongInfo.txt";
+        artist4Info = ":/SydneyBechetInfo.txt";
+        artist5Info = ":/KingOliverInfo.txt";
+
         emit sendInfor(imagePaths, names);
         emit playMusic("qrc:/2Pac_CaliforniaLove.mp3");
+        emit sendFileForInfoBar(":/1920sInfo.txt");
         break;
     case 3:
         imagePaths = {":/Mariah_Carey.png", ":/I_forgot.png", ":/Cheryl_James.png", ":/2000sIcon.jpg", ":/1990sIcon.jpg"};
@@ -135,18 +143,23 @@ void stageCreate::play(int i){
     switch (i) {
     case 1:
         emit playMusic(m1);
+        emit sendFileForInfoBar(artist1Info);
         break;
     case 2:
         emit playMusic(m2);
+        emit sendFileForInfoBar(artist2Info);
         break;
     case 3:
         emit playMusic(m3);
+        emit sendFileForInfoBar(artist3Info);
         break;
     case 4:
         emit playMusic(m4);
+        emit sendFileForInfoBar(artist4Info);
         break;
     case 5:
         emit playMusic(m5);
+        emit sendFileForInfoBar(artist5Info);
         break;
     default:
         break;

@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>1920sInfo.txt</file>
+        <file>SydneyBechetInfo.txt</file>
+        <file>LouisArmstrongInfo.txt</file>
+        <file>KingOliverInfo.txt</file>
+        <file>JellyRollInfo.txt</file>
+        <file>WillySmithInfo.txt</file>
+        <file>DukeEllingtonInfo.txt</file>
+    </qresource>
+</RCC>

@@ -40,12 +40,15 @@ public slots:
 
     void playMusic(QByteArray path);
 
+    void setInfoBar(QString filePath);
+
 private:
     Ui::Form *ui;
     MainWindow* m_mainWindow;
     QMediaPlayer *musicPlayer;
     QAudioOutput *musicAud;
     stageCreate* stage;
+
 signals:
     void mainWindowComeBack();
 };
