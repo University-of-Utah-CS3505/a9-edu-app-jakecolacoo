@@ -94,3 +94,9 @@ void MainWindow::on_button2000_clicked()
     otherWindow->show();
     emit eraChange(0);
 }
+
+void MainWindow:: on_quizButton_clicked()
+{
+    this->close();
+    quizWindow->show();
+}

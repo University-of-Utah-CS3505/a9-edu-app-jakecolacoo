@@ -102,75 +102,51 @@
    <property name="maximumSize">
     <size>
      <width>16777215</width>
-     <height>24</height>
+     <height>16777215</height>
     </size>
    </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
    </property>
-   <widget class="QPushButton" name="music1">
-    <property name="text">
-     <string>Kanye</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="music2">
-    <property name="text">
-     <string>MJ</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="music3">
-    <property name="text">
-     <string>Mario</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="music4">
-    <property name="text">
-     <string>Sam</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="music5">
-    <property name="text">
-     <string>Big dick</string>
-    </property>
-   </widget>
   </widget>
-  <widget class="QSplitter" name="splitter_2">
+  <widget class="QPushButton" name="trueButton">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>310</y>
-     <width>621</width>
-     <height>101</height>
+     <x>50</x>
+     <y>260</y>
+     <width>251</width>
+     <height>121</height>
     </rect>
    </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
+   <property name="text">
+    <string>TRUE</string>
    </property>
-   <widget class="QLabel" name="sprite1">
-    <property name="text">
-     <string>TextLabel</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="sprite2">
-    <property name="text">
-     <string>TextLabel</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="sprite3">
-    <property name="text">
-     <string>TextLabel</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="sprite4">
-    <property name="text">
-     <string>TextLabel</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="sprite5">
-    <property name="text">
-     <string>TextLabel</string>
-    </property>
-   </widget>
+  </widget>
+  <widget class="QPushButton" name="falseButton">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>260</y>
+     <width>251</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>FALSE</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="question">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>60</y>
+     <width>601</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
   </widget>
  </widget>
  <resources/>

@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QtMultiMedia/QtMultiMedia>
 #include "Form.h"
+#include "Quiz.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -40,9 +41,12 @@ private slots:
 
     void on_button2000_clicked();
 
+    void on_quizButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     Form* otherWindow;
+    Quiz* quizWindow;
     QMediaPlayer *player;
     QAudioOutput *aud;
 public slots:
