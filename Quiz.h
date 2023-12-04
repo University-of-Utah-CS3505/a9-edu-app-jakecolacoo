@@ -23,6 +23,8 @@ public:
 
 private slots:
     void on_pushButton_clicked();
+    void on_trueButton_clicked();
+    void on_falseButton_clicked();
 
 
 public slots:
@@ -32,6 +34,9 @@ private:
     MainWindow* m_mainWindow;
     QMediaPlayer *musicPlayer;
     QAudioOutput *musicAud;
+
+    void showNextQuestion();
+    bool setAnswer;
 
 signals:
     void mainWindowComeBack();
