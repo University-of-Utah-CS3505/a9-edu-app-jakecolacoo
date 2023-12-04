@@ -49,6 +49,7 @@ public slots:
     void mainBack();
 
 signals:
-    void clicked1920();
+//    void clicked1920();
+    void eraChange(int era);
 };
 #endif // MAINWINDOW_H
