@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     player->setAudioOutput(aud);/* we can use this player to play the background music for start menu */
     aud->setVolume(100);
     connect(otherWindow, &Form::mainWindowComeBack, this, &MainWindow::mainBack);
+    connect(quizWindow, &Quiz::mainWindowComeBack, this, &MainWindow::mainBack);
 
     int id = QFontDatabase::addApplicationFont(":/PixeloidSans-mLxMm.ttf");
     QString family = QFontDatabase::applicationFontFamilies(id).at(0);
