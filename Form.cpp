@@ -1,3 +1,8 @@
+/*
+ * View class of the stage
+ * Use to set up the sprites and all other UI stuff
+*/
+
 #include "Form.h"
 #include "ui_Form.h"
 #include "mainwindow.h"
@@ -8,6 +13,7 @@ Form::Form(MainWindow* mainWindow,QWidget *parent)
     , ui(new Ui::Form)
     , m_mainWindow(mainWindow)
     , musicPlayer(new QMediaPlayer(this))
+    , stage(new stageCreate(this))
 {
     ui->setupUi(this);
     QPalette palette;
@@ -30,14 +36,22 @@ Form::Form(MainWindow* mainWindow,QWidget *parent)
     // Make sure the widget background is set to be drawn
     this->setAutoFillBackground(true);
 
+    int id = QFontDatabase::addApplicationFont(":/PixeloidSans-mLxMm.ttf");
+    QString family = QFontDatabase::applicationFontFamilies(id).at(0);
+    QFont font(family);
+    font.setStyleHint(QFont::Monospace);
+    ui->label->setFont(font);
 
     musicAud = new QAudioOutput;
     musicPlayer->setAudioOutput(musicAud);
     musicAud->setVolume(60);
 
 
-    connect(m_mainWindow, &MainWindow::clicked1920, this, &Form::Stuffs1920);
-
+//    connect(m_mainWindow, &MainWindow::clicked1920, this, &Form::Stuffs1920);
+    connect(m_mainWindow, &MainWindow::eraChange, stage, &stageCreate::setEra);
+    connect(stage, &stageCreate::sendInfor, this, &Form::setEra);
+    connect(stage, &stageCreate::playMusic, this, &Form::playMusic);
+    connect(stage, &stageCreate::sendFileForInfoBar, this, &Form::setInfoBar);
 }
 
 Form::~Form()
@@ -45,6 +59,7 @@ Form::~Form()
     delete ui;
 }
 
+//When the go back button clicked
 void Form::on_pushButton_clicked()
 {
     this->close();
@@ -54,62 +69,57 @@ void Form::on_pushButton_clicked()
     // MainOne.player->stop();
 }
 
-void Form::Stuffs1920(){
+//use to set the current era's musication sprites and names
+void Form::setEra(QStringList image, QStringList names){
+    //Size of sprites, can be adjust by need
     int w = ui->sprite1->width();
     int h = ui->sprite1->height();
-    QPixmap pix(":/Cheryl_James.png");
-    ui->sprite1->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
 
-    QPixmap pix2(":/2000sIcon.jpg");
-    ui->sprite2->setPixmap(pix2.scaled(w,h,Qt::KeepAspectRatio));
+    for (int i = 0; i < 5; ++i) {
+        // build QLabel and QPushButton name
+        QString labelName = QString("sprite%1").arg(i + 1);
+        QString buttonName = QString("music%1").arg(i + 1);
 
-    QPixmap pix3(":/I_forgot.png");
-    ui->sprite3->setPixmap(pix3.scaled(w,h,Qt::KeepAspectRatio));
+        // find QLabel 和 QPushButton
+        QLabel *label = this->findChild<QLabel *>(labelName);
+        QPushButton *button = this->findChild<QPushButton *>(buttonName);
 
-    QPixmap pix4(":/Mariah_Carey.png");
-    ui->sprite4->setPixmap(pix4.scaled(w,h,Qt::KeepAspectRatio));
+        if (label && i < image.size()) {
+            // set QLabel image
+            QPixmap pixmap(image[i]);
+            label->setPixmap(pixmap.scaled(w,h,Qt::KeepAspectRatio));
+        }
 
-    QPixmap pix5(":/Sandra_Denton.png");
-    ui->sprite5->setPixmap(pix5.scaled(w,h,Qt::KeepAspectRatio));
-
-
-
+        if (button && i < names.size()) {
+            // set QPushButton text
+            button->setText(names[i]);
+            //connect each button to corresponding music
+            connect(button, &QPushButton::clicked, this, [this, i]() {
+                stage->play(i+1);
+            });
+        }
+    }
 }
 
-void Form::on_music1_clicked()
-{
-    musicPlayer->setSource(QUrl::fromEncoded("qrc:/Biggie_MoMoneyMoProblems.mp3"));
+//Make the player to play the music at the path
+void Form::playMusic(QByteArray path){
+    musicPlayer->setSource(QUrl::fromEncoded(path));
     musicPlayer->play();
 }
 
+void Form::setInfoBar(QString filePath) {
+    QFile file(filePath);
 
-void Form::on_music2_clicked()
-{
-    musicPlayer->setSource(QUrl::fromEncoded("qrc:/BobDylan_LikeARollingStone.mp3"));
-    musicPlayer->play();
+    if (!file.exists()) {
+        qDebug() << "File does not exist";
+    } else if (!file.permissions().testFlag(QFileDevice::ReadUser)) {
+        qDebug() << "Read permissions denied";
+    } else if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qDebug() << "Failed to open file: " << file.errorString();
+    } else {
+        QTextStream in(&file);
+        QString text = in.readAll();
 
+        ui->label->setText(text);
+    }
 }
-
-
-void Form::on_music3_clicked()
-{
-    musicPlayer->setSource(QUrl::fromEncoded("qrc:/DaftPunk_OneMoreTime.mp3"));
-    musicPlayer->play();
-}
-
-
-void Form::on_music4_clicked()
-{
-    musicPlayer->setSource(QUrl::fromEncoded("qrc:/BingCrosby_ISurrenderDear.mp3"));
-    musicPlayer->play();
-
-}
-
-
-void Form::on_music5_clicked()
-{
-    musicPlayer->setSource(QUrl::fromEncoded("qrc:/DukeEllington_Caravan.mp3"));
-    musicPlayer->play();
-
-}
-

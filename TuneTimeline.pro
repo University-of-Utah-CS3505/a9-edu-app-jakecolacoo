@@ -11,11 +11,13 @@ CONFIG += resources_big
 SOURCES += \
     Form.cpp \
     main.cpp \
-    MainWindow.cpp
+    MainWindow.cpp \
+    stagecreate.cpp
 
 HEADERS += \
     Form.h \
-    MainWindow.h
+    MainWindow.h \
+    stagecreate.h
 
 FORMS += \
     Form.ui \
@@ -29,6 +31,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RESOURCES += \
     font.qrc \
     icon.qrc \
+    info.qrc \
     music.qrc \
     stages.qrc
 
