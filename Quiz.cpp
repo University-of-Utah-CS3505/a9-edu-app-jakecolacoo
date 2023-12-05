@@ -258,7 +258,7 @@ void Quiz::on_eraButton1_clicked()
     if (correctButton == 1)
     {
         QString text = "Correct!";
-        ui->rightOrWrong->setText("<font color='green'>" + text);
+        ui->rightOrWrong->setText("<font color='light green'>" + text);
         QString scoreText = "Correct: ";
         amountCorrect++;
         scoreText+=std::to_string(amountCorrect);
@@ -292,7 +292,7 @@ void Quiz::on_eraButton2_clicked()
     if (correctButton == 2)
     {
         QString text = "Correct!";
-        ui->rightOrWrong->setText("<font color='green'>" + text);
+        ui->rightOrWrong->setText("<font color='light green'>" + text);
         amountCorrect++;
         QString scoreText = "Correct: ";
         scoreText+=std::to_string(amountCorrect);
@@ -327,7 +327,7 @@ void Quiz::on_eraButton3_clicked()
     if (correctButton == 3)
     {
         QString text = "Correct!";
-        ui->rightOrWrong->setText("<font color='green'>" + text);
+        ui->rightOrWrong->setText("<font color='light green'>" + text);
         amountCorrect++;
         QString scoreText = "Correct: ";
         scoreText+=std::to_string(amountCorrect);
@@ -360,9 +360,8 @@ void Quiz::on_eraButton4_clicked()
 {
     if (correctButton == 4)
     {
-        //ui->rightOrWrong->setStyleSheet("background-color: green");
         QString text = "Correct!";
-        ui->rightOrWrong->setText("<font color='green'>" + text);
+        ui->rightOrWrong->setText("<font color='light green'>" + text);
         amountCorrect++;
         QString scoreText = "Correct: ";
         scoreText+=std::to_string(amountCorrect);
