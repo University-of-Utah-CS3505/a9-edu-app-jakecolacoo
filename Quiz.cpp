@@ -252,17 +252,25 @@ void Quiz::on_eraButton1_clicked()
 {
     if (correctButton == 1)
     {
-        ui->rightOrWrong->setText("Correct!");
-        ui->rightOrWrong->setStyleSheet("background-color: green");
+        QString text = "Correct!";
+        ui->rightOrWrong->setText("<font color='green'>" + text);
         QString scoreText = "Correct: ";
+        QTimer::singleShot(2000, [=]()
+        {
+            ui->rightOrWrong->setText("");
+        });
         amountCorrect++;
         scoreText+=std::to_string(amountCorrect);
         ui->correctScore->setText(scoreText);
     }
     else
     {
-        ui->rightOrWrong->setText("Incorrect!");
-        ui->rightOrWrong->setStyleSheet("background-color: red");
+        QString text = "Incorrect!";
+        ui->rightOrWrong->setText("<font color='red'>" + text);
+        QTimer::singleShot(2000, [=]()
+        {
+            ui->rightOrWrong->setText("");
+        });
         amountIncorrect++;
         QString scoreText = "Incorrect: ";
         scoreText+=std::to_string(amountIncorrect);
@@ -277,8 +285,14 @@ void Quiz::on_eraButton2_clicked()
 {
     if (correctButton == 2)
     {
-        ui->rightOrWrong->setText("Correct!");
-        ui->rightOrWrong->setStyleSheet("background-color: green");
+        QString text = "Correct!";
+        ui->rightOrWrong->setText("<font color='green'>" + text);
+
+        // Set delay until right or wrong text disappears
+        QTimer::singleShot(2000, [=]()
+        {
+            ui->rightOrWrong->setText("");
+        });
         amountCorrect++;
         QString scoreText = "Correct: ";
         scoreText+=std::to_string(amountCorrect);
@@ -286,8 +300,12 @@ void Quiz::on_eraButton2_clicked()
     }
     else
     {
-        ui->rightOrWrong->setText("Incorrect!");
-        ui->rightOrWrong->setStyleSheet("background-color: red");
+        QString text = "Incorrect!";
+        ui->rightOrWrong->setText("<font color='red'>" + text);
+        QTimer::singleShot(2000, [=]()
+        {
+            ui->rightOrWrong->setText("");
+        });
         amountIncorrect++;
         QString scoreText = "Incorrect: ";
         scoreText+=std::to_string(amountIncorrect);
@@ -302,19 +320,27 @@ void Quiz::on_eraButton3_clicked()
 {
     if (correctButton == 3)
     {
-        ui->rightOrWrong->setText("Correct!");
-        ui->rightOrWrong->setStyleSheet("background-color: green");
+        QString text = "Correct!";
+        ui->rightOrWrong->setText("<font color='green'>" + text);
         amountCorrect++;
         QString scoreText = "Correct: ";
+        QTimer::singleShot(2000, [=]()
+        {
+           ui->rightOrWrong->setText("");
+        });
         scoreText+=std::to_string(amountCorrect);
         ui->correctScore->setText(scoreText);
     }
     else
     {
-        ui->rightOrWrong->setText("Incorrect!");
-        ui->rightOrWrong->setStyleSheet("background-color: red");
+        QString text = "Incorrect!";
+        ui->rightOrWrong->setText("<font color='red'>" + text);
         amountIncorrect++;
         QString scoreText = "Incorrect: ";
+        QTimer::singleShot(2000, [=]()
+        {
+           ui->rightOrWrong->setText("");
+        });
         scoreText+=std::to_string(amountIncorrect);
         ui->incorrectScore->setText(scoreText);
     }
@@ -327,19 +353,28 @@ void Quiz::on_eraButton4_clicked()
 {
     if (correctButton == 4)
     {
-        ui->rightOrWrong->setText("Correct!");
-        ui->rightOrWrong->setStyleSheet("background-color: green");
+        //ui->rightOrWrong->setStyleSheet("background-color: green");
+        QString text = "Correct!";
+        ui->rightOrWrong->setText("<font color='green'>" + text);
         amountCorrect++;
         QString scoreText = "Correct: ";
+        QTimer::singleShot(2000, [=]()
+        {
+           ui->rightOrWrong->setText("");
+        });
         scoreText+=std::to_string(amountCorrect);
         ui->correctScore->setText(scoreText);
     }
     else
     {
-        ui->rightOrWrong->setText("Incorrect!");
-        ui->rightOrWrong->setStyleSheet("background-color: red");
+        QString text = "Incorrect!";
+        ui->rightOrWrong->setText("<font color='red'>" + text);
         amountIncorrect++;
         QString scoreText = "Incorrect: ";
+        QTimer::singleShot(2000, [=]()
+        {
+           ui->rightOrWrong->setText("");
+        });
         scoreText+=std::to_string(amountIncorrect);
         ui->incorrectScore->setText(scoreText);
     }
