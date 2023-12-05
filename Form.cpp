@@ -132,6 +132,6 @@ void Form::setInfoBar(QString filePath) {
         QTextStream in(&file);
         QString text = in.readAll();
 
-        ui->label->setText(text);
+        ui->label->setText("<font color='white'>" + text);
     }
 }
