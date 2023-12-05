@@ -42,6 +42,9 @@ Quiz::Quiz(MainWindow* mainWindow,QWidget *parent)
     // Make sure the widget background is set to be drawn
     this->setAutoFillBackground(true);
 
+    // Set up all the game buttons, scores, and music paths
+    setUpQuiz();
+
     int id = QFontDatabase::addApplicationFont(":/PixeloidSans-mLxMm.ttf");
     QString family = QFontDatabase::applicationFontFamilies(id).at(0);
     QFont font(family);
@@ -52,32 +55,43 @@ Quiz::Quiz(MainWindow* mainWindow,QWidget *parent)
     musicPlayer->setAudioOutput(musicAud);
     musicAud->setVolume(60);
 
+    connect(m_mainWindow, &MainWindow::playQuizMusic, this, &Quiz::playMusic);
+    connect(m_mainWindow, &MainWindow::setUpQuizButtons, this, &Quiz::setUpButtons);
+}
+
+Quiz::~Quiz()
+{
+    delete ui;
+}
+
+void Quiz::setUpQuiz()
+{
+    questionNumber = 0;
+    amountCorrect = 0;
+    amountIncorrect = 0;
+
     musicPaths = {{"qrc:/2Pac_CaliforniaLove.mp3", 1990}, {"qrc:/BennyGoodman_DontBeThatWay.mp3", 1930},
-                   {"qrc:/Biggie_MoMoneyMoProblems.mp3", 1990}, {"qrc:/BillieHoliday_GodBlessTheChild.mp3", 1930},
-                   {"qrc:/BingCrosby_ISurrenderDear.mp3", 1930}, {"qrc:/BobDylan_LikeARollingStone.mp3", 1960},
-                   {"qrc:/BobMarley_CouldYouBeLoved.mp3", 1970}, {"qrc:/BruceSpringsteen_BornToRun.mp3", 1980},
-                   {"qrc:/Chuck_Berry_-_Johnny_B_Goode.mp3", 1950}, {"qrc:/DaftPunk_OneMoreTime.mp3", 2000},
-                   {"qrc:/DukeEllington_Caravan.mp3", 1930}, {"qrc:/EdithPiaf_LaVieEnRose.mp3", 1940},
-                   {"qrc:/EllaFitzgerald_DreamALittleDreamOfMe.mp3", 1940}, {"qrc:/ElvisPresley_HoundDog.mp3", 1950},
-                   {"qrc:/FrankSinatra_FlyMeToTheMoon.mp3", 1940}, {"qrc:/GlenMiller_IntheMood.mp3", 1930},
-                   {"qrc:/GloriaGaynor_IWillSurvive.mp3", 1970}, {"qrc:/JamesBrown_IGotYou(IFeelGood).mp3", 1960},
-                   {"qrc:/JellyRollMorton_HonkyTonkBlues.mp3", 1920}, {"qrc:/JimiHendrix_PurpleHaze.mp3", 1960},
-                   {"qrc:/JohnnyCash_IWalkTheLine.mp3", 1950}, {"qrc:/KingOliver_DoctorJazz.mp3", 1920},
-                   {"qrc:/LadyGaga_BadRomance.mp3", 2000}, {"qrc:/LedZeppelin_ImmigrantSong.mp3", 1970},
-                   {"qrc:/LittleRichard_TuttiFruti.mp3", 1950}, {"qrc:/Louis Armstrong - What A Wonderful World.mp3", 1920},
-                   {"qrc:/Madonna_MaterialGirl.mp3", 1980}, {"qrc:/MichaelJacson_BeatIt.mp3", 1980},
-                   {"qrc:/N.K.COLE_L.O.V.E.mp3", 1940}, {"qrc:/Nirvana_SmellsLikeTeenSpirit.mp3", 1990},
-                   {"qrc:/Oasis_DontLookBackInAnger.mp3", 1990}, {"qrc:/JayZ_EmpireStateOfMind.mp3", 2000},
-                   {"qrc:/Prince_Kiss.mp3", 1980}, {"qrc:/Ramones_BlitzkriegBop.mp3", 1970},
-                   {"qrc:/SidneyBechet_WildCatBlues.mp3", 1920}, {"qrc:/StevieWonder_SirDuke.mp3", 1970},
-                   {"qrc:/TheBeatles_HereComesTheSun.mp3", 1960}, {"qrc:/TheEverlyBrothers_AllIHavetoDoIsDream.mp3", 1950},
-                   {"qrc:/TheSupremes_StopintheNameofLove.mp3", 1960}, {"qrc:/ThroughTheWire.mp3", 2000},
-                   {"qrc:/VeraLynn_We_llMeetAgain.mp3", 1940}, {"qrc:/WhiteStripes_SevenNationArmy.mp3", 2000},
-                   {"qrc:/WillieSmith_EchoesOfSpring.mp3", 1920}, {"qrc:/MariahCarey_Fantasy.mp3", 2000}};
-
-//    std::iterator item = musicPaths.begin();
-//    std::advance( item, random_0_to_n(musicPaths.size()) );
-
+                  {"qrc:/Biggie_MoMoneyMoProblems.mp3", 1990}, {"qrc:/BillieHoliday_GodBlessTheChild.mp3", 1930},
+                  {"qrc:/BingCrosby_ISurrenderDear.mp3", 1930}, {"qrc:/BobDylan_LikeARollingStone.mp3", 1960},
+                  {"qrc:/BobMarley_CouldYouBeLoved.mp3", 1970}, {"qrc:/BruceSpringsteen_BornToRun.mp3", 1980},
+                  {"qrc:/Chuck_Berry_-_Johnny_B_Goode.mp3", 1950}, {"qrc:/DaftPunk_OneMoreTime.mp3", 2000},
+                  {"qrc:/DukeEllington_Caravan.mp3", 1930}, {"qrc:/EdithPiaf_LaVieEnRose.mp3", 1940},
+                  {"qrc:/EllaFitzgerald_DreamALittleDreamOfMe.mp3", 1940}, {"qrc:/ElvisPresley_HoundDog.mp3", 1950},
+                  {"qrc:/FrankSinatra_FlyMeToTheMoon.mp3", 1940}, {"qrc:/GlenMiller_IntheMood.mp3", 1930},
+                  {"qrc:/GloriaGaynor_IWillSurvive.mp3", 1970}, {"qrc:/JamesBrown_IGotYou(IFeelGood).mp3", 1960},
+                  {"qrc:/JellyRollMorton_HonkyTonkBlues.mp3", 1920}, {"qrc:/JimiHendrix_PurpleHaze.mp3", 1960},
+                  {"qrc:/JohnnyCash_IWalkTheLine.mp3", 1950}, {"qrc:/KingOliver_DoctorJazz.mp3", 1920},
+                  {"qrc:/LadyGaga_BadRomance.mp3", 2000}, {"qrc:/LedZeppelin_ImmigrantSong.mp3", 1970},
+                  {"qrc:/LittleRichard_TuttiFruti.mp3", 1950}, {"qrc:/Louis Armstrong - What A Wonderful World.mp3", 1920},
+                  {"qrc:/Madonna_MaterialGirl.mp3", 1980}, {"qrc:/MichaelJacson_BeatIt.mp3", 1980},
+                  {"qrc:/N.K.COLE_L.O.V.E.mp3", 1940}, {"qrc:/Nirvana_SmellsLikeTeenSpirit.mp3", 1990},
+                  {"qrc:/Oasis_DontLookBackInAnger.mp3", 1990}, {"qrc:/JayZ_EmpireStateOfMind.mp3", 2000},
+                  {"qrc:/Prince_Kiss.mp3", 1980}, {"qrc:/Ramones_BlitzkriegBop.mp3", 1970},
+                  {"qrc:/SidneyBechet_WildCatBlues.mp3", 1920}, {"qrc:/StevieWonder_SirDuke.mp3", 1970},
+                  {"qrc:/TheBeatles_HereComesTheSun.mp3", 1960}, {"qrc:/TheEverlyBrothers_AllIHavetoDoIsDream.mp3", 1950},
+                  {"qrc:/TheSupremes_StopintheNameofLove.mp3", 1960}, {"qrc:/ThroughTheWire.mp3", 2000},
+                  {"qrc:/VeraLynn_We_llMeetAgain.mp3", 1940}, {"qrc:/WhiteStripes_SevenNationArmy.mp3", 2000},
+                  {"qrc:/WillieSmith_EchoesOfSpring.mp3", 1920}, {"qrc:/MariahCarey_Fantasy.mp3", 2000}};
 
     // Move all paths to vector
     for(auto elem : musicPaths)
@@ -86,9 +100,6 @@ Quiz::Quiz(MainWindow* mainWindow,QWidget *parent)
     }
 
     // Randomly shuffle the order
-//    auto rng = std::default_random_engine {};
-//    std::shuffle(std::begin(vecOfPaths), std::end(vecOfPaths), rng);
-
     auto rd = std::random_device {};
     auto rng = std::default_random_engine { rd() };
     std::shuffle(std::begin(vecOfPaths), std::end(vecOfPaths), rng);
@@ -96,19 +107,9 @@ Quiz::Quiz(MainWindow* mainWindow,QWidget *parent)
     questionNumber = 0;
     correctEra = 1920;
 
-    // Display random question
-    //showNextQuestion();
-
-    // Set button color
-//    ui->trueButton->setStyleSheet("background-color: green");
-//    ui->falseButton->setStyleSheet("background-color: red");
-    connect(m_mainWindow, &MainWindow::playQuizMusic, this, &Quiz::playMusic);
-    connect(m_mainWindow, &MainWindow::setUpQuizButtons, this, &Quiz::setUpButtons);
-}
-
-Quiz::~Quiz()
-{
-    delete ui;
+    // Disable game over buttons
+    ui->finalScore->setVisible(false);
+    ui->retryButton->setVisible(false);
 }
 
 //When the go back button clicked
@@ -128,6 +129,11 @@ void Quiz::playMusic()
 
 void Quiz::setUpButtons()
 {
+    if (questionNumber >= 10)
+    {
+        gameOver();
+        return;
+    }
     ui->eraButton1->setEnabled(true);
     ui->eraButton2->setEnabled(true);
     ui->eraButton3->setEnabled(true);
@@ -388,4 +394,27 @@ void Quiz::on_eraButton4_clicked()
         playMusic();
         setUpButtons();
     });
+}
+
+void Quiz::gameOver()
+{
+    ui->eraButton1->setVisible(false);
+    ui->eraButton2->setVisible(false);
+    ui->eraButton3->setVisible(false);
+    ui->eraButton4->setVisible(false);
+    ui->question->setVisible(false);
+    ui->correctScore->setVisible(false);
+    ui->incorrectScore->setVisible(false);
+
+    ui->retryButton->setVisible(true);
+    QString userScore = "You Scored: ";
+    userScore+=std::to_string(amountCorrect);
+    userScore+="/10";
+    ui->finalScore->setText(userScore);
+    ui->finalScore->setVisible(true);
+}
+
+void Quiz::on_retryButton_clicked()
+{
+    setUpQuiz();
 }

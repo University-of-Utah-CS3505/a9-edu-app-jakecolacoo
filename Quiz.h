@@ -27,6 +27,7 @@ private slots:
     void on_eraButton2_clicked();
     void on_eraButton3_clicked();
     void on_eraButton4_clicked();
+    void on_retryButton_clicked();
 
 public slots:
 
@@ -36,9 +37,11 @@ private:
     QMediaPlayer *musicPlayer;
     QAudioOutput *musicAud;
 
+    void setUpQuiz();
     void playMusic();
     void setUpButtons();
     void setOtherButtons(int button1, int button2, int button3);
+    void gameOver();
     std::map<QByteArray, int> musicPaths;
     std::vector<QByteArray> vecOfPaths;
 
