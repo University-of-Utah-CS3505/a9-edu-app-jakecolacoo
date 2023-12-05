@@ -194,7 +194,7 @@ void Quiz::setOtherButtons (int button1, int button2, int button3)
     usedValue = (correctEra - 1920)/10;
     while (randomEra == usedValue || randomEra == usedValue2)
     {
-        randomEra = QRandomGenerator::global()->bounded(0,10);
+        randomEra = QRandomGenerator::global()->bounded(0,9);
     }
 
     int usedValue3 = randomEra;
@@ -223,7 +223,7 @@ void Quiz::setOtherButtons (int button1, int button2, int button3)
     usedValue = (correctEra - 1920)/10;
     while (randomEra == usedValue || randomEra == usedValue2 || randomEra == usedValue3)
     {
-        randomEra = QRandomGenerator::global()->bounded(0,10);
+        randomEra = QRandomGenerator::global()->bounded(0,9);
     }
 
     randomEra = (randomEra * 10) + 1920;
