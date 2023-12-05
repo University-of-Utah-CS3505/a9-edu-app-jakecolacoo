@@ -1,10 +1,10 @@
 <RCC>
     <qresource prefix="/">
-        <file>Stage.png</file>
         <file>music.mp3</file>
         <file>Cheryl_James.png</file>
         <file>I_forgot.png</file>
         <file>Mariah_Carey.png</file>
         <file>peakpx.jpg</file>
+        <file>Stage.png</file>
     </qresource>
 </RCC>

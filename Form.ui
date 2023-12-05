@@ -38,9 +38,9 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>440</y>
+     <y>460</y>
      <width>741</width>
-     <height>201</height>
+     <height>181</height>
     </rect>
    </property>
    <property name="autoFillBackground">
@@ -97,7 +97,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>400</y>
+     <y>270</y>
      <width>721</width>
      <height>41</height>
     </rect>
@@ -176,10 +176,10 @@
   <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>220</y>
-     <width>731</width>
-     <height>191</height>
+     <x>0</x>
+     <y>300</y>
+     <width>741</width>
+     <height>151</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_2">
