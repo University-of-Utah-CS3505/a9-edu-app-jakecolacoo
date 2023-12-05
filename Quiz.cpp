@@ -67,13 +67,13 @@ Quiz::Quiz(MainWindow* mainWindow,QWidget *parent)
                    {"qrc:/LittleRichard_TuttiFruti.mp3", 1950}, {"qrc:/Louis Armstrong - What A Wonderful World.mp3", 1920},
                    {"qrc:/Madonna_MaterialGirl.mp3", 1980}, {"qrc:/MichaelJacson_BeatIt.mp3", 1980},
                    {"qrc:/N.K.COLE_L.O.V.E.mp3", 1940}, {"qrc:/Nirvana_SmellsLikeTeenSpirit.mp3", 1990},
-                   {"qrc:/Oasis_DontLookBackInAnger.mp3", 1990}, {"qrc:/OutKast_HeyYa.mp3", 2000},
+                   {"qrc:/Oasis_DontLookBackInAnger.mp3", 1990}, {"qrc:/JayZ_EmpireStateOfMind.mp3", 2000},
                    {"qrc:/Prince_Kiss.mp3", 1980}, {"qrc:/Ramones_BlitzkriegBop.mp3", 1970},
                    {"qrc:/SidneyBechet_WildCatBlues.mp3", 1920}, {"qrc:/StevieWonder_SirDuke.mp3", 1970},
                    {"qrc:/TheBeatles_HereComesTheSun.mp3", 1960}, {"qrc:/TheEverlyBrothers_AllIHavetoDoIsDream.mp3", 1950},
                    {"qrc:/TheSupremes_StopintheNameofLove.mp3", 1960}, {"qrc:/ThroughTheWire.mp3", 2000},
                    {"qrc:/VeraLynn_We_llMeetAgain.mp3", 1940}, {"qrc:/WhiteStripes_SevenNationArmy.mp3", 2000},
-                   {"qrc:/WillieSmith_EchoesOfSpring.mp3", 1920}};
+                   {"qrc:/WillieSmith_EchoesOfSpring.mp3", 1920}, {"qrc:/MariahCarey_Fantasy.mp3", 2000}};
 
 //    std::iterator item = musicPaths.begin();
 //    std::advance( item, random_0_to_n(musicPaths.size()) );
