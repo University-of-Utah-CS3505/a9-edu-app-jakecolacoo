@@ -52,7 +52,6 @@ Quiz::Quiz(MainWindow* mainWindow,QWidget *parent)
     musicPlayer->setAudioOutput(musicAud);
     musicAud->setVolume(60);
 
-    std::map<QByteArray, int> musicPaths;
     musicPaths = {{"qrc:/2Pac_CaliforniaLove.mp3", 1990}, {"qrc:/BennyGoodman_DontBeThatWay.mp3", 1930},
                    {"qrc:/Biggie_MoMoneyMoProblems.mp3", 1990}, {"qrc:/BillieHoliday_GodBlessTheChild.mp3", 1930},
                    {"qrc:/BingCrosby_ISurrenderDear.mp3", 1930}, {"qrc:/BobDylan_LikeARollingStone.mp3", 1960},
@@ -94,6 +93,8 @@ Quiz::Quiz(MainWindow* mainWindow,QWidget *parent)
     auto rng = std::default_random_engine { rd() };
     std::shuffle(std::begin(vecOfPaths), std::end(vecOfPaths), rng);
 
+    questionNumber = 0;
+    correctEra = 1920;
 
     // Display random question
     //showNextQuestion();
@@ -107,6 +108,7 @@ Quiz::Quiz(MainWindow* mainWindow,QWidget *parent)
 //    ui->trueButton->setStyleSheet("background-color: green");
 //    ui->falseButton->setStyleSheet("background-color: red");
     connect(m_mainWindow, &MainWindow::playQuizMusic, this, &Quiz::playMusic);
+    connect(m_mainWindow, &MainWindow::setUpQuizButtons, this, &Quiz::setUpButtons);
 }
 
 Quiz::~Quiz()
@@ -180,5 +182,183 @@ void Quiz::playMusic()
 {
     musicPlayer->setSource(QUrl::fromEncoded(vecOfPaths[0]));
     musicPlayer->play();
-    qDebug()<<vecOfPaths[0];
+    qDebug()<<vecOfPaths[questionNumber];
+}
+
+void Quiz::setUpButtons()
+{
+    correctButton = QRandomGenerator::global()->bounded(1,5);
+    correctEra = musicPaths[vecOfPaths[questionNumber]];
+    QString correctText = QString::number(musicPaths[vecOfPaths[questionNumber]]);
+
+    switch(correctButton)
+    {
+    case 1:
+        ui->eraButton1->setText(correctText);
+        setOtherButtons(2, 3, 4);
+        break;
+
+    case 2:
+        ui->eraButton2->setText(correctText);
+        setOtherButtons(1, 3, 4);
+        break;
+
+    case 3:
+        ui->eraButton3->setText(correctText);
+        setOtherButtons(1, 2, 4);
+        break;
+
+    case 4:
+        ui->eraButton4->setText(correctText);
+        setOtherButtons(1, 2, 3);
+        break;
+    }
+}
+
+void Quiz::setOtherButtons (int button1, int button2, int button3)
+{
+    int randomEra = QRandomGenerator::global()->bounded(0,9);
+    int usedValue = (correctEra - 1920)/10;
+
+    // If the random era is the value we already set, create it again
+    while (randomEra == usedValue)
+    {
+        randomEra = QRandomGenerator::global()->bounded(0,10);
+    }
+
+    // Must save this value so it isn't repeated for the next buttons
+    int usedValue2 = randomEra;
+    randomEra = (randomEra * 10) + 1920;
+    QString randomEraText = QString::number(randomEra);
+    switch(button1)
+    {
+    case 1:
+        ui->eraButton1->setText(randomEraText);
+        break;
+
+    case 2:
+        ui->eraButton2->setText(randomEraText);
+        break;
+
+    case 3:
+        ui->eraButton3->setText(randomEraText);
+        break;
+
+    case 4:
+        ui->eraButton4->setText(randomEraText);
+        break;
+    }
+
+    randomEra = QRandomGenerator::global()->bounded(0,9);
+    usedValue = (correctEra - 1920)/10;
+    while (randomEra == usedValue || randomEra == usedValue2)
+    {
+        randomEra = QRandomGenerator::global()->bounded(0,10);
+    }
+
+    int usedValue3 = randomEra;
+    randomEra = (randomEra * 10) + 1920;
+    randomEraText = QString::number(randomEra);
+    switch(button2)
+    {
+    case 1:
+        ui->eraButton1->setText(randomEraText);
+        break;
+
+    case 2:
+        ui->eraButton2->setText(randomEraText);
+        break;
+
+    case 3:
+        ui->eraButton3->setText(randomEraText);
+        break;
+
+    case 4:
+        ui->eraButton4->setText(randomEraText);
+        break;
+    }
+
+    randomEra = QRandomGenerator::global()->bounded(0,9);
+    usedValue = (correctEra - 1920)/10;
+    while (randomEra == usedValue || randomEra == usedValue2 || randomEra == usedValue3)
+    {
+        randomEra = QRandomGenerator::global()->bounded(0,10);
+    }
+
+    randomEra = (randomEra * 10) + 1920;
+    randomEraText = QString::number(randomEra);
+    switch(button3)
+    {
+    case 1:
+        ui->eraButton1->setText(randomEraText);
+        break;
+
+    case 2:
+        ui->eraButton2->setText(randomEraText);
+        break;
+
+    case 3:
+        ui->eraButton3->setText(randomEraText);
+        break;
+
+    case 4:
+        ui->eraButton4->setText(randomEraText);
+        break;
+    }
+}
+
+void Quiz::on_eraButton1_clicked()
+{
+    if (correctButton == 1)
+    {
+        ui->rightOrWrong->setText("Correct!");
+        ui->rightOrWrong->setStyleSheet("background-color: green");
+    }
+    else
+    {
+        ui->rightOrWrong->setText("Incorrect!");
+        ui->rightOrWrong->setStyleSheet("background-color: red");
+    }
+}
+
+void Quiz::on_eraButton2_clicked()
+{
+    if (correctButton == 2)
+    {
+        ui->rightOrWrong->setText("Correct!");
+        ui->rightOrWrong->setStyleSheet("background-color: green");
+    }
+    else
+    {
+        ui->rightOrWrong->setText("Incorrect!");
+        ui->rightOrWrong->setStyleSheet("background-color: red");
+    }
+}
+
+void Quiz::on_eraButton3_clicked()
+{
+    if (correctButton == 3)
+    {
+        ui->rightOrWrong->setText("Correct!");
+        ui->rightOrWrong->setStyleSheet("background-color: green");
+    }
+    else
+    {
+        ui->rightOrWrong->setText("Incorrect!");
+        ui->rightOrWrong->setStyleSheet("background-color: red");
+    }
+}
+
+void Quiz::on_eraButton4_clicked()
+{
+    if (correctButton == 4)
+    {
+        ui->rightOrWrong->setText("Correct!");
+        ui->rightOrWrong->setStyleSheet("background-color: green");
+    }
+    else
+    {
+        ui->rightOrWrong->setText("Incorrect!");
+        ui->rightOrWrong->setStyleSheet("background-color: red");
+    }
 }

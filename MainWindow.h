@@ -56,5 +56,6 @@ signals:
 //    void clicked1920();
     void eraChange(int era);
     void playQuizMusic();
+    void setUpQuizButtons();
 };
 #endif // MAINWINDOW_H

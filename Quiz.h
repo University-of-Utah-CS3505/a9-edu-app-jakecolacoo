@@ -23,6 +23,11 @@ public:
 
 private slots:
     void on_pushButton_clicked();
+    void on_eraButton1_clicked();
+    void on_eraButton2_clicked();
+    void on_eraButton3_clicked();
+    void on_eraButton4_clicked();
+
     void on_trueButton_clicked();
     void on_falseButton_clicked();
 
@@ -36,9 +41,16 @@ private:
     QAudioOutput *musicAud;
 
     void showNextQuestion();
-    bool setAnswer;
     void playMusic();
+    void setUpButtons();
+    void setOtherButtons(int button1, int button2, int button3);
+    std::map<QByteArray, int> musicPaths;
     std::vector<QByteArray> vecOfPaths;
+
+    bool setAnswer;
+    int questionNumber;
+    int correctEra;
+    int correctButton;
 
 signals:
     void mainWindowComeBack();
