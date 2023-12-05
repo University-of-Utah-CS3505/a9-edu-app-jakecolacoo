@@ -46,7 +46,6 @@ Form::Form(MainWindow* mainWindow,QWidget *parent)
     musicPlayer->setAudioOutput(musicAud);
     musicAud->setVolume(60);
 
-
 //    connect(m_mainWindow, &MainWindow::clicked1920, this, &Form::Stuffs1920);
     connect(m_mainWindow, &MainWindow::eraChange, stage, &stageCreate::setEra);
     connect(stage, &stageCreate::sendInfor, this, &Form::setEra);
@@ -71,6 +70,7 @@ void Form::on_pushButton_clicked()
 
 //use to set the current era's musication sprites and names
 void Form::setEra(QStringList image, QStringList names){
+
     //Size of sprites, can be adjust by need
     int w = ui->sprite1->width();
     int h = ui->sprite1->height();
@@ -99,6 +99,18 @@ void Form::setEra(QStringList image, QStringList names){
             });
         }
     }
+
+    // Uncheck any previously checked buttons
+    ui->music1->setCheckable(false);
+    ui->music1->setCheckable(true);
+    ui->music2->setCheckable(false);
+    ui->music2->setCheckable(true);
+    ui->music3->setCheckable(false);
+    ui->music3->setCheckable(true);
+    ui->music4->setCheckable(false);
+    ui->music4->setCheckable(true);
+    ui->music5->setCheckable(false);
+    ui->music5->setCheckable(true);
 }
 
 //Make the player to play the music at the path

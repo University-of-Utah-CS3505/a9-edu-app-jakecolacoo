@@ -36,16 +36,16 @@ void stageCreate::setEra(int era){
         emit sendInfor(imagePaths, names);
 
         //send background music(same as the rest cases)
-        emit playMusic("qrc:/2Pac_CaliforniaLove.mp3");
         break;
     case 2:
-        imagePaths = {":/I_forgot.png", ":/I_forgot.png", ":/Cheryl_James.png", ":/2000sIcon.jpg", ":/1990sIcon.jpg"};
-        names = {"2-1", "2-2", "2-3", "2-4", "2-5"};
-        m1 = "qrc:/BobDylan_LikeARollingStone.mp3";
-        m2 = "qrc:/Biggie_MoMoneyMoProblems.mp3";
-        m3 = "qrc:/DukeEllington_Caravan.mp3";
-        m4 = "qrc:/BingCrosby_ISurrenderDear.mp3";
-        m5 = "qrc:/DaftPunk_OneMoreTime.mp3";
+        imagePaths = {":/1920 Will The Lion Smith Sprite.png", ":/1920 Jelly Roll Morton Sprite.png", ":/1920 Louis Armstring Sprite.png", ":/1920 Sidney Bechet Sprite.png", ":/1920 King Oliver Sprite.png"};
+        names = {"Willy 'The Lion' Smith", "Jelly Roll Morton", "Louis Armstrong", "Sydney Bechet", "King Oliver"};
+        m1 = "qrc:/WillieSmith_EchoesOfSpring.mp3";
+        m2 = "qrc:/JellyRollMorton_HonkyTonkBlues.mp3";
+        m3 = "qrc:/LouisArmstrong_BasinStreetBlues.mp3";
+        m4 = "qrc:/SidneyBechet_WildCatBlues.mp3";
+        m5 = "qrc:/KingOliver_DoctorJazz.mp3";
+
 
         artist1Info = ":/WillySmithInfo.txt";
         artist2Info = ":/JellyRollInfo.txt";
@@ -54,7 +54,6 @@ void stageCreate::setEra(int era){
         artist5Info = ":/KingOliverInfo.txt";
 
         emit sendInfor(imagePaths, names);
-        emit playMusic("qrc:/2Pac_CaliforniaLove.mp3");
         emit sendFileForInfoBar(":/1920sInfo.txt");
         break;
     case 3:
@@ -66,7 +65,6 @@ void stageCreate::setEra(int era){
         m4 = "qrc:/BingCrosby_ISurrenderDear.mp3";
         m5 = "qrc:/Biggie_MoMoneyMoProblems.mp3";
         emit sendInfor(imagePaths, names);
-        emit playMusic("qrc:/Louis Armstrong - What A Wonderful World.mp3");
         break;
     case 4:
         imagePaths = {":/Cheryl_James.png", ":/I_forgot.png", ":/Cheryl_James.png", ":/2000sIcon.jpg", ":/1990sIcon.jpg"};
@@ -77,7 +75,6 @@ void stageCreate::setEra(int era){
         m4 = "qrc:/BingCrosby_ISurrenderDear.mp3";
         m5 = "qrc:/DukeEllington_Caravan.mp3";
         emit sendInfor(imagePaths, names);
-        emit playMusic("qrc:/JohnnyCash_IWalkTheLine.mp3");
         break;
     case 5:
         imagePaths = {":/2000sIcon.jpg", ":/I_forgot.png", ":/Cheryl_James.png", ":/2000sIcon.jpg", ":/1990sIcon.jpg"};
@@ -88,7 +85,6 @@ void stageCreate::setEra(int era){
         m4 = "qrc:/BingCrosby_ISurrenderDear.mp3";
         m5 = "qrc:/DukeEllington_Caravan.mp3";
         emit sendInfor(imagePaths, names);
-        emit playMusic("qrc:/N.K.COLE_L.O.V.E.mp3");
         break;
     case 6:
         imagePaths = {":/Mariah_Carey.png", ":/I_forgot.png", ":/Cheryl_James.png", ":/2000sIcon.jpg", ":/1990sIcon.jpg"};
@@ -99,7 +95,6 @@ void stageCreate::setEra(int era){
         m4 = "qrc:/BingCrosby_ISurrenderDear.mp3";
         m5 = "qrc:/DukeEllington_Caravan.mp3";
         emit sendInfor(imagePaths, names);
-        emit playMusic("qrc:/SidneyBechet_WildCatBlues.mp3");
         break;
     case 7:
         imagePaths = {":/Mariah_Carey.png", ":/I_forgot.png", ":/Cheryl_James.png", ":/2000sIcon.jpg", ":/1990sIcon.jpg"};
@@ -110,7 +105,6 @@ void stageCreate::setEra(int era){
         m4 = "qrc:/BingCrosby_ISurrenderDear.mp3";
         m5 = "qrc:/DukeEllington_Caravan.mp3";
         emit sendInfor(imagePaths, names);
-        emit playMusic("qrc:/2Pac_CaliforniaLove.mp3");
         break;
     case 8:
         imagePaths = {":/Mariah_Carey.png", ":/I_forgot.png", ":/Cheryl_James.png", ":/2000sIcon.jpg", ":/1990sIcon.jpg"};
@@ -121,7 +115,6 @@ void stageCreate::setEra(int era){
         m4 = "qrc:/BingCrosby_ISurrenderDear.mp3";
         m5 = "qrc:/DukeEllington_Caravan.mp3";
         emit sendInfor(imagePaths, names);
-        emit playMusic("qrc:/2Pac_CaliforniaLove.mp3");
         break;
     case 9:
         imagePaths = {":/Mariah_Carey.png", ":/I_forgot.png", ":/Cheryl_James.png", ":/2000sIcon.jpg", ":/1990sIcon.jpg"};
@@ -132,7 +125,6 @@ void stageCreate::setEra(int era){
         m4 = "qrc:/BingCrosby_ISurrenderDear.mp3";
         m5 = "qrc:/DukeEllington_Caravan.mp3";
         emit sendInfor(imagePaths, names);
-        emit playMusic("qrc:/2Pac_CaliforniaLove.mp3");
         break;
     default:
         break;

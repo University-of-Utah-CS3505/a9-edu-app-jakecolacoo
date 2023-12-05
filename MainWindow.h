@@ -5,6 +5,7 @@
 #include <QtMultiMedia/QtMultiMedia>
 #include "Form.h"
 #include "Quiz.h"
+#include "QPushButton"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -49,6 +50,8 @@ private:
     Quiz* quizWindow;
     QMediaPlayer *player;
     QAudioOutput *aud;
+
+    void SetButtonImage(QPushButton* button, QString filePath);
 public slots:
     void mainBack();
 

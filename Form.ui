@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>Form</class>
  <widget class="QWidget" name="Form">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -35,9 +38,9 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>450</y>
+     <y>440</y>
      <width>741</width>
-     <height>191</height>
+     <height>201</height>
     </rect>
    </property>
    <property name="autoFillBackground">
@@ -90,87 +93,147 @@
     <string>PushButton</string>
    </property>
   </widget>
-  <widget class="QSplitter" name="splitter">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>420</y>
-     <width>661</width>
-     <height>21</height>
+     <x>10</x>
+     <y>400</y>
+     <width>721</width>
+     <height>41</height>
     </rect>
    </property>
-   <property name="maximumSize">
-    <size>
-     <width>16777215</width>
-     <height>24</height>
-    </size>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <widget class="QPushButton" name="music1">
-    <property name="text">
-     <string>Kanye</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="music2">
-    <property name="text">
-     <string>MJ</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="music3">
-    <property name="text">
-     <string>Mario</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="music4">
-    <property name="text">
-     <string>Sam</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="music5">
-    <property name="text">
-     <string>Big dick</string>
-    </property>
-   </widget>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QPushButton" name="music1">
+      <property name="text">
+       <string>Kanye</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="music2">
+      <property name="text">
+       <string>MJ</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="music3">
+      <property name="text">
+       <string>Mario</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>true</bool>
+      </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="music4">
+      <property name="text">
+       <string>Sam</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="music5">
+      <property name="text">
+       <string>Big dick</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
-  <widget class="QSplitter" name="splitter_2">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>310</y>
-     <width>621</width>
-     <height>101</height>
+     <x>10</x>
+     <y>220</y>
+     <width>731</width>
+     <height>191</height>
     </rect>
    </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <widget class="QLabel" name="sprite1">
-    <property name="text">
-     <string>TextLabel</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="sprite2">
-    <property name="text">
-     <string>TextLabel</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="sprite3">
-    <property name="text">
-     <string>TextLabel</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="sprite4">
-    <property name="text">
-     <string>TextLabel</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="sprite5">
-    <property name="text">
-     <string>TextLabel</string>
-    </property>
-   </widget>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QLabel" name="sprite1">
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="sprite2">
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="sprite3">
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="sprite4">
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="sprite5">
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>

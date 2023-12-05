@@ -32,15 +32,14 @@
     <property name="text">
      <string/>
     </property>
-    <property name="icon">
-     <iconset resource="icon.qrc">
-      <normaloff>:/1920sIcon.jpg</normaloff>:/1920sIcon.jpg</iconset>
-    </property>
     <property name="iconSize">
      <size>
       <width>130</width>
       <height>130</height>
      </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="button1930">
@@ -55,15 +54,14 @@
     <property name="text">
      <string/>
     </property>
-    <property name="icon">
-     <iconset resource="icon.qrc">
-      <normaloff>:/1930sIcon.jpg</normaloff>:/1930sIcon.jpg</iconset>
-    </property>
     <property name="iconSize">
      <size>
       <width>130</width>
       <height>130</height>
      </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="button1940">
@@ -78,15 +76,14 @@
     <property name="text">
      <string/>
     </property>
-    <property name="icon">
-     <iconset resource="icon.qrc">
-      <normaloff>:/1940sIcon.jpg</normaloff>:/1940sIcon.jpg</iconset>
-    </property>
     <property name="iconSize">
      <size>
       <width>130</width>
       <height>130</height>
      </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="button1950">
@@ -101,15 +98,14 @@
     <property name="text">
      <string/>
     </property>
-    <property name="icon">
-     <iconset resource="icon.qrc">
-      <normaloff>:/1950sIcon.jpg</normaloff>:/1950sIcon.jpg</iconset>
-    </property>
     <property name="iconSize">
      <size>
       <width>130</width>
       <height>130</height>
      </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="button1960">
@@ -124,15 +120,14 @@
     <property name="text">
      <string/>
     </property>
-    <property name="icon">
-     <iconset resource="icon.qrc">
-      <normaloff>:/1960sIcon.jpg</normaloff>:/1960sIcon.jpg</iconset>
-    </property>
     <property name="iconSize">
      <size>
       <width>130</width>
       <height>130</height>
      </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="button1970">
@@ -147,15 +142,14 @@
     <property name="text">
      <string/>
     </property>
-    <property name="icon">
-     <iconset resource="icon.qrc">
-      <normaloff>:/1970sIcon.jpg</normaloff>:/1970sIcon.jpg</iconset>
-    </property>
     <property name="iconSize">
      <size>
       <width>130</width>
       <height>130</height>
      </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="button1980">
@@ -170,15 +164,14 @@
     <property name="text">
      <string/>
     </property>
-    <property name="icon">
-     <iconset resource="icon.qrc">
-      <normaloff>:/1980sIcon.png</normaloff>:/1980sIcon.png</iconset>
-    </property>
     <property name="iconSize">
      <size>
       <width>130</width>
       <height>130</height>
      </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="button1990">
@@ -193,15 +186,14 @@
     <property name="text">
      <string/>
     </property>
-    <property name="icon">
-     <iconset resource="icon.qrc">
-      <normaloff>:/1990sIcon.jpg</normaloff>:/1990sIcon.jpg</iconset>
-    </property>
     <property name="iconSize">
      <size>
       <width>130</width>
       <height>130</height>
      </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="button2000">
@@ -216,15 +208,14 @@
     <property name="text">
      <string/>
     </property>
-    <property name="icon">
-     <iconset resource="icon.qrc">
-      <normaloff>:/2000sIcon.jpg</normaloff>:/2000sIcon.jpg</iconset>
-    </property>
     <property name="iconSize">
      <size>
       <width>130</width>
       <height>130</height>
      </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QLabel" name="label">
@@ -369,14 +360,12 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>37</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources>
-  <include location="icon.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

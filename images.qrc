@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Cheryl_James.png</file>
+        <file>I_forgot.png</file>
+        <file>Mariah_Carey.png</file>
+        <file>Sandra_Denton.png</file>
+        <file>Bob Marley Sprite.png</file>
+        <file>1920sIcon.png</file>
+        <file>1930sIcon.png</file>
+        <file>2000sIcon.png</file>
+        <file>1990sIcon.png</file>
+        <file>1980sIcon.png</file>
+        <file>1970sIcon.png</file>
+        <file>1960sIcon.png</file>
+        <file>1950sIcon.png</file>
+        <file>1940sIcon.png</file>
+        <file>1920 Will The Lion Smith Sprite.png</file>
+        <file>1920 Sidney Bechet Sprite.png</file>
+        <file>1920 Louis Armstring Sprite.png</file>
+        <file>1920 King Oliver Sprite.png</file>
+        <file>1920 Jelly Roll Morton Sprite.png</file>
+    </qresource>
+</RCC>
