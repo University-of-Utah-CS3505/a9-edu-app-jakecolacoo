@@ -101,4 +101,5 @@ void MainWindow:: on_quizButton_clicked()
 {
     this->close();
     quizWindow->show();
+    emit playQuizMusic();
 }

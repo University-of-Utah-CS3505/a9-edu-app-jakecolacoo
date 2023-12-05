@@ -55,5 +55,6 @@ public slots:
 signals:
 //    void clicked1920();
     void eraChange(int era);
+    void playQuizMusic();
 };
 #endif // MAINWINDOW_H

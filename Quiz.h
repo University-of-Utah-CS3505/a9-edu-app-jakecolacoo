@@ -37,6 +37,8 @@ private:
 
     void showNextQuestion();
     bool setAnswer;
+    void playMusic();
+    std::vector<QByteArray> vecOfPaths;
 
 signals:
     void mainWindowComeBack();
