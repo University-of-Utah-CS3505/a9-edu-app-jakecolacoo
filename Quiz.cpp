@@ -128,6 +128,11 @@ void Quiz::playMusic()
 
 void Quiz::setUpButtons()
 {
+    ui->eraButton1->setEnabled(true);
+    ui->eraButton2->setEnabled(true);
+    ui->eraButton3->setEnabled(true);
+    ui->eraButton4->setEnabled(true);
+
     correctButton = QRandomGenerator::global()->bounded(1,5);
     correctEra = musicPaths[vecOfPaths[questionNumber]];
     QString correctText = QString::number(musicPaths[vecOfPaths[questionNumber]]);
@@ -255,10 +260,6 @@ void Quiz::on_eraButton1_clicked()
         QString text = "Correct!";
         ui->rightOrWrong->setText("<font color='green'>" + text);
         QString scoreText = "Correct: ";
-        QTimer::singleShot(2000, [=]()
-        {
-            ui->rightOrWrong->setText("");
-        });
         amountCorrect++;
         scoreText+=std::to_string(amountCorrect);
         ui->correctScore->setText(scoreText);
@@ -267,18 +268,23 @@ void Quiz::on_eraButton1_clicked()
     {
         QString text = "Incorrect!";
         ui->rightOrWrong->setText("<font color='red'>" + text);
-        QTimer::singleShot(2000, [=]()
-        {
-            ui->rightOrWrong->setText("");
-        });
         amountIncorrect++;
         QString scoreText = "Incorrect: ";
         scoreText+=std::to_string(amountIncorrect);
         ui->incorrectScore->setText(scoreText);
     }
+    ui->eraButton1->setEnabled(false);
+    ui->eraButton2->setEnabled(false);
+    ui->eraButton3->setEnabled(false);
+    ui->eraButton4->setEnabled(false);
     questionNumber++;
-    playMusic();
-    setUpButtons();
+
+    QTimer::singleShot(2000, [=]()
+    {
+       ui->rightOrWrong->setText("");
+       playMusic();
+       setUpButtons();
+    });
 }
 
 void Quiz::on_eraButton2_clicked()
@@ -287,12 +293,6 @@ void Quiz::on_eraButton2_clicked()
     {
         QString text = "Correct!";
         ui->rightOrWrong->setText("<font color='green'>" + text);
-
-        // Set delay until right or wrong text disappears
-        QTimer::singleShot(2000, [=]()
-        {
-            ui->rightOrWrong->setText("");
-        });
         amountCorrect++;
         QString scoreText = "Correct: ";
         scoreText+=std::to_string(amountCorrect);
@@ -302,18 +302,24 @@ void Quiz::on_eraButton2_clicked()
     {
         QString text = "Incorrect!";
         ui->rightOrWrong->setText("<font color='red'>" + text);
-        QTimer::singleShot(2000, [=]()
-        {
-            ui->rightOrWrong->setText("");
-        });
         amountIncorrect++;
         QString scoreText = "Incorrect: ";
         scoreText+=std::to_string(amountIncorrect);
         ui->incorrectScore->setText(scoreText);
     }
+    ui->eraButton1->setEnabled(false);
+    ui->eraButton2->setEnabled(false);
+    ui->eraButton3->setEnabled(false);
+    ui->eraButton4->setEnabled(false);
     questionNumber++;
-    playMusic();
-    setUpButtons();
+
+    // Set delay until right or wrong text disappears and music plays
+    QTimer::singleShot(2000, [=]()
+    {
+       ui->rightOrWrong->setText("");
+       playMusic();
+       setUpButtons();
+    });
 }
 
 void Quiz::on_eraButton3_clicked()
@@ -324,10 +330,6 @@ void Quiz::on_eraButton3_clicked()
         ui->rightOrWrong->setText("<font color='green'>" + text);
         amountCorrect++;
         QString scoreText = "Correct: ";
-        QTimer::singleShot(2000, [=]()
-        {
-           ui->rightOrWrong->setText("");
-        });
         scoreText+=std::to_string(amountCorrect);
         ui->correctScore->setText(scoreText);
     }
@@ -337,16 +339,21 @@ void Quiz::on_eraButton3_clicked()
         ui->rightOrWrong->setText("<font color='red'>" + text);
         amountIncorrect++;
         QString scoreText = "Incorrect: ";
-        QTimer::singleShot(2000, [=]()
-        {
-           ui->rightOrWrong->setText("");
-        });
         scoreText+=std::to_string(amountIncorrect);
         ui->incorrectScore->setText(scoreText);
     }
+    ui->eraButton1->setEnabled(false);
+    ui->eraButton2->setEnabled(false);
+    ui->eraButton3->setEnabled(false);
+    ui->eraButton4->setEnabled(false);
     questionNumber++;
-    playMusic();
-    setUpButtons();
+
+    QTimer::singleShot(2000, [=]()
+    {
+       ui->rightOrWrong->setText("");
+       playMusic();
+       setUpButtons();
+    });
 }
 
 void Quiz::on_eraButton4_clicked()
@@ -358,10 +365,6 @@ void Quiz::on_eraButton4_clicked()
         ui->rightOrWrong->setText("<font color='green'>" + text);
         amountCorrect++;
         QString scoreText = "Correct: ";
-        QTimer::singleShot(2000, [=]()
-        {
-           ui->rightOrWrong->setText("");
-        });
         scoreText+=std::to_string(amountCorrect);
         ui->correctScore->setText(scoreText);
     }
@@ -371,14 +374,19 @@ void Quiz::on_eraButton4_clicked()
         ui->rightOrWrong->setText("<font color='red'>" + text);
         amountIncorrect++;
         QString scoreText = "Incorrect: ";
-        QTimer::singleShot(2000, [=]()
-        {
-           ui->rightOrWrong->setText("");
-        });
         scoreText+=std::to_string(amountIncorrect);
         ui->incorrectScore->setText(scoreText);
     }
+    ui->eraButton1->setEnabled(false);
+    ui->eraButton2->setEnabled(false);
+    ui->eraButton3->setEnabled(false);
+    ui->eraButton4->setEnabled(false);
     questionNumber++;
-    playMusic();
-    setUpButtons();
+
+    QTimer::singleShot(2000, [=]()
+    {
+        ui->rightOrWrong->setText("");
+        playMusic();
+        setUpButtons();
+    });
 }
