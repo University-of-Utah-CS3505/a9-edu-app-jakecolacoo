@@ -99,11 +99,6 @@ Quiz::Quiz(MainWindow* mainWindow,QWidget *parent)
     // Display random question
     //showNextQuestion();
 
-    ui->falseButton->setVisible(false);
-    ui->trueButton->setVisible(false);
-    ui->falseButton->setEnabled(false);
-    ui->trueButton->setEnabled(false);
-
     // Set button color
 //    ui->trueButton->setStyleSheet("background-color: green");
 //    ui->falseButton->setStyleSheet("background-color: red");
@@ -122,60 +117,6 @@ void Quiz::on_pushButton_clicked()
     this->close();
     emit mainWindowComeBack();
     musicPlayer->stop();
-}
-
-void Quiz::showNextQuestion()
-{
-    int question = QRandomGenerator::global()->bounded(0,3);
-
-    switch(question)
-    {
-    case 0:
-        ui->question->setText("It do clap though");
-        setAnswer = true;
-        break;
-
-    case 1:
-        ui->question->setText("Them cheeks are large");
-        setAnswer = false;
-        break;
-
-    case 2:
-        ui->question->setText("I am heterosexual");
-        setAnswer = false;
-        break;
-    }
-}
-
-void Quiz::on_trueButton_clicked()
-{
-    if(setAnswer)
-    {
-        ui->rightOrWrong->setText("Correct!");
-        ui->rightOrWrong->setStyleSheet("background-color: green");
-    }
-    else
-    {
-        ui->rightOrWrong->setText("Incorrect!");
-        ui->rightOrWrong->setStyleSheet("background-color: red");
-
-    }
-    showNextQuestion();
-}
-
-void Quiz::on_falseButton_clicked()
-{
-    if(!setAnswer)
-    {
-        ui->rightOrWrong->setText("Correct!");
-        ui->rightOrWrong->setStyleSheet("background-color: green");
-    }
-    else
-    {
-        ui->rightOrWrong->setText("Incorrect!");
-        ui->rightOrWrong->setStyleSheet("background-color: red");
-    }
-    showNextQuestion();
 }
 
 void Quiz::playMusic()

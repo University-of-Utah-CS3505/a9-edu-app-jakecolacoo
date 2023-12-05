@@ -28,10 +28,6 @@ private slots:
     void on_eraButton3_clicked();
     void on_eraButton4_clicked();
 
-    void on_trueButton_clicked();
-    void on_falseButton_clicked();
-
-
 public slots:
 
 private:
@@ -40,7 +36,6 @@ private:
     QMediaPlayer *musicPlayer;
     QAudioOutput *musicAud;
 
-    void showNextQuestion();
     void playMusic();
     void setUpButtons();
     void setOtherButtons(int button1, int button2, int button3);
