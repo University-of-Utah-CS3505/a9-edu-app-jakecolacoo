@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
     , otherWindow(new Form(this))
+    , quizWindow(new Quiz(this))
     , player(new QMediaPlayer(this))
 {
     ui->setupUi(this);
@@ -13,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     player->setAudioOutput(aud);/* we can use this player to play the background music for start menu */
     aud->setVolume(100);
     connect(otherWindow, &Form::mainWindowComeBack, this, &MainWindow::mainBack);
+    connect(quizWindow, &Quiz::mainWindowComeBack, this, &MainWindow::mainBack);
 
     int id = QFontDatabase::addApplicationFont(":/PixeloidSans-mLxMm.ttf");
     QString family = QFontDatabase::applicationFontFamilies(id).at(0);
@@ -93,4 +95,12 @@ void MainWindow::on_button2000_clicked()
     this->close();
     otherWindow->show();
     emit eraChange(0);
+}
+
+void MainWindow:: on_quizButton_clicked()
+{
+    this->close();
+    quizWindow->show();
+    emit playQuizMusic();
+    emit setUpQuizButtons();
 }

@@ -10,6 +10,7 @@ CONFIG += resources_big
 
 SOURCES += \
     Form.cpp \
+    Quiz.cpp \
     main.cpp \
     MainWindow.cpp \
     stagecreate.cpp
@@ -17,11 +18,13 @@ SOURCES += \
 HEADERS += \
     Form.h \
     MainWindow.h \
+    Quiz.h \
     stagecreate.h
 
 FORMS += \
     Form.ui \
-    MainWindow.ui
+    MainWindow.ui \
+    Quiz.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
