@@ -42,8 +42,9 @@ private:
     std::map<QByteArray, int> musicPaths;
     std::vector<QByteArray> vecOfPaths;
 
-    bool setAnswer;
     int questionNumber;
+    int amountCorrect = 0;
+    int amountIncorrect = 0;
     int correctEra;
     int correctButton;
 
