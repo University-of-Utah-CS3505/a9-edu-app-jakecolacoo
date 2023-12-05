@@ -98,6 +98,11 @@ Quiz::Quiz(MainWindow* mainWindow,QWidget *parent)
     // Display random question
     //showNextQuestion();
 
+    ui->falseButton->setVisible(false);
+    ui->trueButton->setVisible(false);
+    ui->falseButton->setEnabled(false);
+    ui->trueButton->setEnabled(false);
+
     // Set button color
 //    ui->trueButton->setStyleSheet("background-color: green");
 //    ui->falseButton->setStyleSheet("background-color: red");
