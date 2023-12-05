@@ -180,7 +180,7 @@ void Quiz::on_falseButton_clicked()
 
 void Quiz::playMusic()
 {
-    musicPlayer->setSource(QUrl::fromEncoded(vecOfPaths[0]));
+    musicPlayer->setSource(QUrl::fromEncoded(vecOfPaths[questionNumber]));
     musicPlayer->play();
     qDebug()<<vecOfPaths[questionNumber];
 }
@@ -223,7 +223,7 @@ void Quiz::setOtherButtons (int button1, int button2, int button3)
     // If the random era is the value we already set, create it again
     while (randomEra == usedValue)
     {
-        randomEra = QRandomGenerator::global()->bounded(0,10);
+        randomEra = QRandomGenerator::global()->bounded(0,9);
     }
 
     // Must save this value so it isn't repeated for the next buttons
@@ -319,6 +319,9 @@ void Quiz::on_eraButton1_clicked()
         ui->rightOrWrong->setText("Incorrect!");
         ui->rightOrWrong->setStyleSheet("background-color: red");
     }
+    questionNumber++;
+    playMusic();
+    setUpButtons();
 }
 
 void Quiz::on_eraButton2_clicked()
@@ -333,6 +336,9 @@ void Quiz::on_eraButton2_clicked()
         ui->rightOrWrong->setText("Incorrect!");
         ui->rightOrWrong->setStyleSheet("background-color: red");
     }
+    questionNumber++;
+    playMusic();
+    setUpButtons();
 }
 
 void Quiz::on_eraButton3_clicked()
@@ -347,6 +353,9 @@ void Quiz::on_eraButton3_clicked()
         ui->rightOrWrong->setText("Incorrect!");
         ui->rightOrWrong->setStyleSheet("background-color: red");
     }
+    questionNumber++;
+    playMusic();
+    setUpButtons();
 }
 
 void Quiz::on_eraButton4_clicked()
@@ -361,4 +370,7 @@ void Quiz::on_eraButton4_clicked()
         ui->rightOrWrong->setText("Incorrect!");
         ui->rightOrWrong->setStyleSheet("background-color: red");
     }
+    questionNumber++;
+    playMusic();
+    setUpButtons();
 }
