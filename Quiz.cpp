@@ -110,6 +110,28 @@ void Quiz::setUpQuiz()
     // Disable game over buttons
     ui->finalScore->setVisible(false);
     ui->retryButton->setVisible(false);
+
+    // Enable all game buttons
+    ui->eraButton1->setVisible(true);
+    ui->eraButton2->setVisible(true);
+    ui->eraButton3->setVisible(true);
+    ui->eraButton4->setVisible(true);
+    ui->question->setVisible(true);
+    ui->correctScore->setVisible(true);
+    ui->incorrectScore->setVisible(true);
+    ui->eraButton1->setEnabled(true);
+    ui->eraButton2->setEnabled(true);
+    ui->eraButton3->setEnabled(true);
+    ui->eraButton4->setEnabled(true);
+
+    // Set up ui correct buttons
+    QString incorrectSet = "Incorrect: ";
+    incorrectSet+=std::to_string(amountIncorrect);
+    ui->incorrectScore->setText(incorrectSet);
+
+    QString  correctSet = "Correct: ";
+    correctSet+=std::to_string(amountCorrect);
+    ui->correctScore->setText(correctSet);
 }
 
 //When the go back button clicked
