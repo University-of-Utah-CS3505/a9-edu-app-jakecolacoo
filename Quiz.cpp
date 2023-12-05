@@ -254,11 +254,19 @@ void Quiz::on_eraButton1_clicked()
     {
         ui->rightOrWrong->setText("Correct!");
         ui->rightOrWrong->setStyleSheet("background-color: green");
+        QString scoreText = "Correct: ";
+        amountCorrect++;
+        scoreText+=std::to_string(amountCorrect);
+        ui->correctScore->setText(scoreText);
     }
     else
     {
         ui->rightOrWrong->setText("Incorrect!");
         ui->rightOrWrong->setStyleSheet("background-color: red");
+        amountIncorrect++;
+        QString scoreText = "Incorrect: ";
+        scoreText+=std::to_string(amountIncorrect);
+        ui->incorrectScore->setText(scoreText);
     }
     questionNumber++;
     playMusic();
@@ -271,11 +279,19 @@ void Quiz::on_eraButton2_clicked()
     {
         ui->rightOrWrong->setText("Correct!");
         ui->rightOrWrong->setStyleSheet("background-color: green");
+        amountCorrect++;
+        QString scoreText = "Correct: ";
+        scoreText+=std::to_string(amountCorrect);
+        ui->correctScore->setText(scoreText);
     }
     else
     {
         ui->rightOrWrong->setText("Incorrect!");
         ui->rightOrWrong->setStyleSheet("background-color: red");
+        amountIncorrect++;
+        QString scoreText = "Incorrect: ";
+        scoreText+=std::to_string(amountIncorrect);
+        ui->incorrectScore->setText(scoreText);
     }
     questionNumber++;
     playMusic();
@@ -288,11 +304,19 @@ void Quiz::on_eraButton3_clicked()
     {
         ui->rightOrWrong->setText("Correct!");
         ui->rightOrWrong->setStyleSheet("background-color: green");
+        amountCorrect++;
+        QString scoreText = "Correct: ";
+        scoreText+=std::to_string(amountCorrect);
+        ui->correctScore->setText(scoreText);
     }
     else
     {
         ui->rightOrWrong->setText("Incorrect!");
         ui->rightOrWrong->setStyleSheet("background-color: red");
+        amountIncorrect++;
+        QString scoreText = "Incorrect: ";
+        scoreText+=std::to_string(amountIncorrect);
+        ui->incorrectScore->setText(scoreText);
     }
     questionNumber++;
     playMusic();
@@ -305,11 +329,19 @@ void Quiz::on_eraButton4_clicked()
     {
         ui->rightOrWrong->setText("Correct!");
         ui->rightOrWrong->setStyleSheet("background-color: green");
+        amountCorrect++;
+        QString scoreText = "Correct: ";
+        scoreText+=std::to_string(amountCorrect);
+        ui->correctScore->setText(scoreText);
     }
     else
     {
         ui->rightOrWrong->setText("Incorrect!");
         ui->rightOrWrong->setStyleSheet("background-color: red");
+        amountIncorrect++;
+        QString scoreText = "Incorrect: ";
+        scoreText+=std::to_string(amountIncorrect);
+        ui->incorrectScore->setText(scoreText);
     }
     questionNumber++;
     playMusic();
