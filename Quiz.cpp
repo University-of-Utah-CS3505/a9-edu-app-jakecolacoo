@@ -160,6 +160,7 @@ void Quiz::setUpButtons()
     ui->eraButton2->setEnabled(true);
     ui->eraButton3->setEnabled(true);
     ui->eraButton4->setEnabled(true);
+    ui->pushButton->setEnabled(true);
 
     correctButton = QRandomGenerator::global()->bounded(1,5);
     correctEra = musicPaths[vecOfPaths[questionNumber]];
@@ -305,6 +306,7 @@ void Quiz::on_eraButton1_clicked()
     ui->eraButton2->setEnabled(false);
     ui->eraButton3->setEnabled(false);
     ui->eraButton4->setEnabled(false);
+    ui->pushButton->setEnabled(false);
     questionNumber++;
 
     QTimer::singleShot(2000, [=]()
@@ -339,6 +341,7 @@ void Quiz::on_eraButton2_clicked()
     ui->eraButton2->setEnabled(false);
     ui->eraButton3->setEnabled(false);
     ui->eraButton4->setEnabled(false);
+    ui->pushButton->setEnabled(false);
     questionNumber++;
 
     // Set delay until right or wrong text disappears and music plays
@@ -374,6 +377,7 @@ void Quiz::on_eraButton3_clicked()
     ui->eraButton2->setEnabled(false);
     ui->eraButton3->setEnabled(false);
     ui->eraButton4->setEnabled(false);
+    ui->pushButton->setEnabled(false);
     questionNumber++;
 
     QTimer::singleShot(2000, [=]()
@@ -408,6 +412,7 @@ void Quiz::on_eraButton4_clicked()
     ui->eraButton2->setEnabled(false);
     ui->eraButton3->setEnabled(false);
     ui->eraButton4->setEnabled(false);
+    ui->pushButton->setEnabled(false);
     questionNumber++;
 
     QTimer::singleShot(2000, [=]()
