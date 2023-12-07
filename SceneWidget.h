@@ -16,11 +16,12 @@ signals:
 public slots:
     void updateWorld();
     void mousePressEvent(QMouseEvent *event) override;
+    void createBody();
 
 private:
     b2World world;
-    b2Body* body;
     QTimer timer;
+    QTimer createTime;
     QImage image;
     std::vector<b2Body*> bodies;
 };
