@@ -138,6 +138,7 @@ RESOURCES += \
     images.qrc \
     info.qrc \
     music.qrc \
+    notes.qrc \
     stages.qrc
 
 DISTFILES += \
