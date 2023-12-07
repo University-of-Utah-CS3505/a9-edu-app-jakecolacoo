@@ -81,6 +81,7 @@ void stageCreate::setEra(int era){
         emit sendInfor(imagePaths, names);
         emit sendFileForInfoBar(":/1930s Info.txt");
         break;
+
     case 4:
         imagePaths = {":/1940s Edith Piaf Sprite.png", ":/1940s Ella Fitzgerald Sprite.png", ":/1940s Frank Sinatra Sprite.png", ":/1940s Nat King Cole Sprite.png", ":/1940s Vera Lynn Sprite.png"};
         names = {"Edith Piaf", "Ella Fitzgerald", "Frank Sinatra", "Nat King Cole", "Vera Lynn"};
