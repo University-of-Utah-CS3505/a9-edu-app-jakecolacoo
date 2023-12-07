@@ -439,6 +439,7 @@ void Quiz::gameOver()
     userScore+="/10";
     ui->finalScore->setText(userScore);
     ui->finalScore->setVisible(true);
+    ui->pushButton->setEnabled(true);
 }
 
 void Quiz::on_retryButton_clicked()
