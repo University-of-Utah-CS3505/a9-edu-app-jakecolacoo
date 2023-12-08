@@ -27,12 +27,15 @@ private:
     QString artist3Info;
     QString artist4Info;
     QString artist5Info;
+    QString decadeInfo;
+
 
 public slots:
     void setEra(int era);
     void play(int i);
 signals:
     void playMusic(QByteArray path);
+    void stopMusic();
 
     void sendFileForInfoBar(QString filePath);
     void sendInfor(QStringList image, QStringList names);

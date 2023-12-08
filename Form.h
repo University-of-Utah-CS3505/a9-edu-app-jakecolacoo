@@ -40,6 +40,8 @@ public slots:
 
     void playMusic(QByteArray path);
 
+    void stopMusic();
+
     void setInfoBar(QString filePath);
 
 private:

@@ -50,7 +50,11 @@ Form::Form(MainWindow* mainWindow,QWidget *parent)
     connect(m_mainWindow, &MainWindow::eraChange, stage, &stageCreate::setEra);
     connect(stage, &stageCreate::sendInfor, this, &Form::setEra);
     connect(stage, &stageCreate::playMusic, this, &Form::playMusic);
+    connect(stage, &stageCreate::stopMusic, this, &Form::stopMusic);
     connect(stage, &stageCreate::sendFileForInfoBar, this, &Form::setInfoBar);
+    connect(ui->decadeButton, &QPushButton::clicked, this, [this]() {
+        stage->play(6);
+    });
 }
 
 Form::~Form()
@@ -75,7 +79,7 @@ void Form::setEra(QStringList image, QStringList names){
     int w = ui->sprite1->width();
     int h = ui->sprite1->height();
 
-    for (int i = 0; i < 5; ++i) {
+    for (int i = 0; i < names.size(); ++i) {
         // build QLabel and QPushButton name
         QString labelName = QString("sprite%1").arg(i + 1);
         QString buttonName = QString("music%1").arg(i + 1);
@@ -117,6 +121,10 @@ void Form::setEra(QStringList image, QStringList names){
 void Form::playMusic(QByteArray path){
     musicPlayer->setSource(QUrl::fromEncoded(path));
     musicPlayer->play();
+}
+
+void Form::stopMusic(){
+    musicPlayer->stop();
 }
 
 void Form::setInfoBar(QString filePath) {

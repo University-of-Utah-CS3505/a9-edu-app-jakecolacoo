@@ -80,7 +80,7 @@
     <number>6</number>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_5">
+  <widget class="QPushButton" name="decadeButton">
    <property name="geometry">
     <rect>
      <x>190</x>

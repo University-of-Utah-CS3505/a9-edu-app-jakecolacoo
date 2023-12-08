@@ -38,10 +38,10 @@ void stageCreate::setEra(int era){
         artist4Info = ":/Jay Z Info.txt";
         artist5Info = ":/Daft Punk Info.txt";
 
-        //send all musication sprite and names(same as the rest cases)
-        emit sendInfor(imagePaths, names);
-        emit sendFileForInfoBar(":/2000s Info.txt");
+        decadeInfo = ":/2000s Info.txt";
 
+        emit sendInfor(imagePaths, names);
+        emit sendFileForInfoBar(decadeInfo);
         //send background music(same as the rest cases)
         break;
     case 2:
@@ -60,8 +60,10 @@ void stageCreate::setEra(int era){
         artist4Info = ":/SydneyBechetInfo.txt";
         artist5Info = ":/KingOliverInfo.txt";
 
+        decadeInfo = ":/1920sInfo.txt";
+
         emit sendInfor(imagePaths, names);
-        emit sendFileForInfoBar(":/1920sInfo.txt");
+        emit sendFileForInfoBar(decadeInfo);
         break;
     case 3:
         imagePaths = {":/1930s Benny Goodman Sprite.png", ":/1930s Billie Holiday Sprite.png", ":/1930s Bing Crosby Sprite.png", ":/1930s Duke Ellington Sprite.png", ":/1930s Glen Miller Sprite.png"};
@@ -78,8 +80,10 @@ void stageCreate::setEra(int era){
         artist4Info = ":/DukeEllingtonInfo.txt";
         artist5Info = ":/Glen Miller info.txt";
 
+        decadeInfo = ":/1930s Info.txt";
+
         emit sendInfor(imagePaths, names);
-        emit sendFileForInfoBar(":/1930s Info.txt");
+        emit sendFileForInfoBar(decadeInfo);
         break;
 
     case 4:
@@ -97,7 +101,10 @@ void stageCreate::setEra(int era){
         artist4Info = ":/Nat King Cole Info.txt";
         artist5Info = ":/Vera Lynn info.txt";
 
+        decadeInfo = ":/1940s Info.txt";
+
         emit sendInfor(imagePaths, names);
+        emit sendFileForInfoBar(decadeInfo);emit sendInfor(imagePaths, names);
         emit sendFileForInfoBar(":/1940s Info.txt");
 
         break;
@@ -116,9 +123,10 @@ void stageCreate::setEra(int era){
         artist4Info = ":/Johnny Cash Info.txt";
         artist5Info = ":/Little Richard Info.txt";
 
-        emit sendInfor(imagePaths, names);
-        emit sendFileForInfoBar(":/1950s Info.txt");
+        decadeInfo = ":/1950s Info.txt";
 
+        emit sendInfor(imagePaths, names);
+        emit sendFileForInfoBar(decadeInfo);
         break;
     case 6:
         imagePaths = {":/1960s Bob Dylan Sprite.png", ":/1960s James Brown Sprite.png", ":/1960s Jimi Hendrix Sprite.png", ":/1960s The Beatles Sprite.png", ":/1960s The Supremes Sprite.png"};
@@ -135,8 +143,10 @@ void stageCreate::setEra(int era){
         artist4Info = ":/The Beatles Info.txt";
         artist5Info = ":/The Supremes Info.txt";
 
+        decadeInfo = ":/1960s Info.txt";
+
         emit sendInfor(imagePaths, names);
-        emit sendFileForInfoBar(":/1960s Info.txt");
+        emit sendFileForInfoBar(decadeInfo);
         break;
     case 7:
         imagePaths = {":/1970s Bob Marley Sprite.png", ":/1970s Gloria Gaynor Sprite.png", ":/1970s Led Zeppelin Jimmy Page Sprite.png", ":/1970s Ramones Sprite.png", ":/1970s Stevie Wonder Sprite.png"};
@@ -153,8 +163,10 @@ void stageCreate::setEra(int era){
         artist4Info = ":/The Ramones Info.txt";
         artist5Info = ":/Stevie Wonder Info.txt";
 
+        decadeInfo = ":/1970s Info.txt";
+
         emit sendInfor(imagePaths, names);
-        emit sendFileForInfoBar(":/1970s Info.txt");
+        emit sendFileForInfoBar(decadeInfo);
         break;
     case 8:
         imagePaths = {":/1980s Bruce Springsteen Sprite.png", ":/1980s Madonna Sprite.png", ":/1980s Michael Jackson Sprite.png", ":/1980s Prince Sprite.png", ":/1980s Salt-N-Pepa Cheryl James.png"};
@@ -172,8 +184,10 @@ void stageCreate::setEra(int era){
         artist4Info = ":/Prince Info.txt";
         artist5Info = ":/Salt-N-Pepa info.txt";
 
+        decadeInfo = ":/1980s Info.txt";
+
         emit sendInfor(imagePaths, names);
-        emit sendFileForInfoBar(":/1980s Info.txt");
+        emit sendFileForInfoBar(decadeInfo);
         break;
     case 9:
         imagePaths = {":/1990s Mariah Carey Sprite.png", ":/1990s Nirvana Kurt Cobain Sprite.png", ":/1990s Tupac Sprite.png", ":/1990s Notorious B.I.G Sprite.png", ":/1990s Oasis Sprite.png"};
@@ -190,8 +204,10 @@ void stageCreate::setEra(int era){
         artist4Info = ":/Biggie info.txt";
         artist5Info = ":/Oasis Info.txt";
 
+        decadeInfo = ":/1990s Info.txt";
+
         emit sendInfor(imagePaths, names);
-        emit sendFileForInfoBar(":/1990s Info.txt");
+        emit sendFileForInfoBar(decadeInfo);
         break;
     default:
         break;
@@ -220,6 +236,9 @@ void stageCreate::play(int i){
         emit playMusic(m5);
         emit sendFileForInfoBar(artist5Info);
         break;
+    case 6:
+        emit stopMusic();
+        emit sendFileForInfoBar(decadeInfo);
     default:
         break;
     }
