@@ -38,7 +38,7 @@ signals:
     void stopMusic();
 
     void sendFileForInfoBar(QString filePath);
-    void sendInfor(QStringList image, QStringList names);
+    void sendInfor(QStringList image, QStringList names, int decadeNum);
 };
 
 #endif // STAGECREATE_H

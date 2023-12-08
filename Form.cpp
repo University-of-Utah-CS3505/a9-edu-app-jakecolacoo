@@ -73,7 +73,7 @@ void Form::on_pushButton_clicked()
 }
 
 //use to set the current era's musication sprites and names
-void Form::setEra(QStringList image, QStringList names){
+void Form::setEra(QStringList image, QStringList names, int decadeNum){
 
     //Size of sprites, can be adjust by need
     int w = ui->sprite1->width();
@@ -104,6 +104,36 @@ void Form::setEra(QStringList image, QStringList names){
         }
     }
 
+    switch (decadeNum) {
+    case 0:
+        SetDecadeButtonImage(":/2000.png");
+        break;
+    case 2:
+        SetDecadeButtonImage(":/1920.png");
+        break;
+    case 3:
+        SetDecadeButtonImage(":/1930.png");
+        break;
+    case 4:
+        SetDecadeButtonImage(":/1940.png");
+        break;
+    case 5:
+        SetDecadeButtonImage(":/1950.png");
+        break;
+    case 6:
+        SetDecadeButtonImage(":/1960.png");
+        break;
+    case 7:
+        SetDecadeButtonImage(":/1970.png");
+        break;
+    case 8:
+        SetDecadeButtonImage(":/1980.png");
+        break;
+    case 9:
+        SetDecadeButtonImage(":/1990.png");
+        break;
+    }
+
     // Uncheck any previously checked buttons
     ui->music1->setCheckable(false);
     ui->music1->setCheckable(true);
@@ -121,6 +151,13 @@ void Form::setEra(QStringList image, QStringList names){
 void Form::playMusic(QByteArray path){
     musicPlayer->setSource(QUrl::fromEncoded(path));
     musicPlayer->play();
+}
+
+void Form::SetDecadeButtonImage(QString filePath) {
+    QPixmap map(filePath);
+    QIcon icon(map);
+    ui->decadeButton->setIcon(icon);
+    ui->decadeButton->setIconSize(ui->decadeButton->size());
 }
 
 void Form::stopMusic(){

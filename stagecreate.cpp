@@ -40,7 +40,7 @@ void stageCreate::setEra(int era){
 
         decadeInfo = ":/2000s Info.txt";
 
-        emit sendInfor(imagePaths, names);
+        emit sendInfor(imagePaths, names, 0);
         emit sendFileForInfoBar(decadeInfo);
         //send background music(same as the rest cases)
         break;
@@ -62,7 +62,7 @@ void stageCreate::setEra(int era){
 
         decadeInfo = ":/1920sInfo.txt";
 
-        emit sendInfor(imagePaths, names);
+        emit sendInfor(imagePaths, names, 2);
         emit sendFileForInfoBar(decadeInfo);
         break;
     case 3:
@@ -82,7 +82,7 @@ void stageCreate::setEra(int era){
 
         decadeInfo = ":/1930s Info.txt";
 
-        emit sendInfor(imagePaths, names);
+        emit sendInfor(imagePaths, names, 3);
         emit sendFileForInfoBar(decadeInfo);
         break;
 
@@ -103,8 +103,8 @@ void stageCreate::setEra(int era){
 
         decadeInfo = ":/1940s Info.txt";
 
-        emit sendInfor(imagePaths, names);
-        emit sendFileForInfoBar(decadeInfo);emit sendInfor(imagePaths, names);
+        emit sendInfor(imagePaths, names, 4);
+        emit sendFileForInfoBar(decadeInfo);
         emit sendFileForInfoBar(":/1940s Info.txt");
 
         break;
@@ -125,7 +125,7 @@ void stageCreate::setEra(int era){
 
         decadeInfo = ":/1950s Info.txt";
 
-        emit sendInfor(imagePaths, names);
+        emit sendInfor(imagePaths, names, 5);
         emit sendFileForInfoBar(decadeInfo);
         break;
     case 6:
@@ -145,7 +145,7 @@ void stageCreate::setEra(int era){
 
         decadeInfo = ":/1960s Info.txt";
 
-        emit sendInfor(imagePaths, names);
+        emit sendInfor(imagePaths, names, 6);
         emit sendFileForInfoBar(decadeInfo);
         break;
     case 7:
@@ -165,7 +165,7 @@ void stageCreate::setEra(int era){
 
         decadeInfo = ":/1970s Info.txt";
 
-        emit sendInfor(imagePaths, names);
+        emit sendInfor(imagePaths, names, 7);
         emit sendFileForInfoBar(decadeInfo);
         break;
     case 8:
@@ -186,7 +186,7 @@ void stageCreate::setEra(int era){
 
         decadeInfo = ":/1980s Info.txt";
 
-        emit sendInfor(imagePaths, names);
+        emit sendInfor(imagePaths, names, 8);
         emit sendFileForInfoBar(decadeInfo);
         break;
     case 9:
@@ -206,7 +206,7 @@ void stageCreate::setEra(int era){
 
         decadeInfo = ":/1990s Info.txt";
 
-        emit sendInfor(imagePaths, names);
+        emit sendInfor(imagePaths, names, 9);
         emit sendFileForInfoBar(decadeInfo);
         break;
     default:
