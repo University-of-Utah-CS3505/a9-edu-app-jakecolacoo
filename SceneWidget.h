@@ -22,8 +22,9 @@ private:
     b2World world;
     QTimer timer;
     QTimer createTime;
-    QImage image;
-    std::vector<b2Body*> bodies;
+//    QImage image;
+    std::vector<QString> images{":/black_note_sprite.png", ":/blue_note_sprite.png", ":/green_note_sprite.png", ":/purple_note_sprite.png", ":/red_note_sprite.png", ":/yellow_note_sprite.png"};
+    std::map<b2Body*, QString> bodies;
 };
 
 #endif // SCENEWIDGET_H

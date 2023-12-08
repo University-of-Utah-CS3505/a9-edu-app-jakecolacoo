@@ -7,12 +7,11 @@
 SceneWidget::SceneWidget(QWidget *parent) : QWidget(parent),
     world(b2Vec2(0.0f, 10.0f)),
     timer(this),
-    createTime(this),
-    image(":/alien1.png")
+    createTime(this)
 {
     // Define the ground body.
     b2BodyDef groundBodyDef;
-    groundBodyDef.position.Set(0.0f, 35.0f);
+    groundBodyDef.position.Set(0.0f, 48.0f);
 
     // Call the body factory which allocates memory for the ground body
     // from a pool and creates the ground box shape (also from a pool).
@@ -36,9 +35,25 @@ SceneWidget::SceneWidget(QWidget *parent) : QWidget(parent),
 
 void SceneWidget::paintEvent(QPaintEvent *) {
     QPainter painter(this);
-    for (auto& body : bodies) {
+    for (auto& pair : bodies) {
+        b2Body* body = pair.first;
+        QString imagePath = pair.second;
+        QImage image(imagePath);
+
         b2Vec2 position = body->GetPosition();
-        painter.drawImage((int)(position.x*20), (int)(position.y*20), image);
+        float angle = body->GetAngle() * 180.0 / M_PI; // 转换为度
+
+        // 设置变换矩阵
+        QTransform transform;
+        transform.translate(position.x * 20, position.y * 20);
+        transform.rotate(angle);
+        painter.setTransform(transform);
+
+        // 绘制图片
+        painter.drawImage(-image.width() / 2, -image.height() / 2, image); // 调整锚点到图片中心
+
+        // 重置变换矩阵
+        painter.resetTransform();
     }
     painter.end();
 }
@@ -46,22 +61,23 @@ void SceneWidget::paintEvent(QPaintEvent *) {
 void SceneWidget::updateWorld() {
     world.Step(1.0/60.0, 6, 2);
 
-    std::vector<b2Body*> bodiesToRemove;
+//    size_t old = bodies.size();
 
-    for (auto& body : bodies) {
+    for (auto it = bodies.begin(); it != bodies.end(); ) {
+        b2Body* body = it->first;
         b2Vec2 position = body->GetPosition();
 
-        // check if it is out of screen
-        if (position.x * 20 > this->width() || position.x * 20 < -70) {
-            bodiesToRemove.push_back(body);
+        if (position.x * 20 > this->width() + 30 || position.x * 20 < -50) {
+            world.DestroyBody(body);
+            it = bodies.erase(it);
+        } else {
+            ++it;
         }
     }
 
-    // delete body that is out of screen
-    for (auto& body : bodiesToRemove) {
-        world.DestroyBody(body);
-        bodies.erase(std::remove(bodies.begin(), bodies.end(), body), bodies.end());
-    }
+//    if(bodies.size() != old){
+//        qDebug() << bodies.size();
+//    }
 
     update();
 }
@@ -71,6 +87,7 @@ void SceneWidget::mousePressEvent(QMouseEvent *event) {
         std::random_device rd;
         std::mt19937 gen(rd());
         std::uniform_real_distribution<> dis(-5.0, 5.0);
+        std::uniform_real_distribution<> angleDis(0, 2 * M_PI);
 
         float mouseX = (event->x() / 20.0f) - 1.0f;
         float mouseY = (event->y() / 20.0f) - 1.0f;
@@ -78,6 +95,7 @@ void SceneWidget::mousePressEvent(QMouseEvent *event) {
         b2BodyDef bodyDef;
         bodyDef.type = b2_dynamicBody;
         bodyDef.position.Set(mouseX, mouseY);
+        bodyDef.angle = angleDis(gen);
 
         b2Body* newBody = world.CreateBody(&bodyDef);
 
@@ -94,8 +112,10 @@ void SceneWidget::mousePressEvent(QMouseEvent *event) {
 
         float randomVelocityX = dis(gen);
         newBody->SetLinearVelocity(b2Vec2(randomVelocityX, 0.0f));
+        QString selectedImage = images[std::uniform_int_distribution<>(0, images.size() - 1)(gen)];
 
-        bodies.push_back(newBody);
+        bodies[newBody] = selectedImage;
+
         update();
     }
 }
@@ -104,10 +124,12 @@ void SceneWidget::createBody() {
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_real_distribution<> dis(-5.0, 5.0);
+    std::uniform_real_distribution<> angleDis(0, 2 * M_PI);
 
     b2BodyDef bodyDef;
     bodyDef.type = b2_dynamicBody;
     bodyDef.position.Set(20.0f, -5.0f);
+    bodyDef.angle = angleDis(gen);
 
     b2Body* newBody = world.CreateBody(&bodyDef);
 
@@ -124,7 +146,8 @@ void SceneWidget::createBody() {
 
     float randomVelocityX = dis(gen);
     newBody->SetLinearVelocity(b2Vec2(randomVelocityX, 0.0f));
+    QString selectedImage = images[std::uniform_int_distribution<>(0, images.size() - 1)(gen)];
 
-    bodies.push_back(newBody);
+    bodies[newBody] = selectedImage;
     update();
 }

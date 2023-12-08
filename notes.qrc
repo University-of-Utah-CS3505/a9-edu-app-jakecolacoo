@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>yellow_note_sprite.png</file>
+        <file>red_note_sprite.png</file>
+        <file>purple_note_sprite.png</file>
+        <file>green_note_sprite.png</file>
+        <file>blue_note_sprite.png</file>
+        <file>black_note_sprite.png</file>
+    </qresource>
+</RCC>
