@@ -149,7 +149,7 @@ void stageCreate::setEra(int era){
         emit sendFileForInfoBar(decadeInfo);
         break;
     case 7:
-        imagePaths = {":/1970s Bob Marley Sprite.png", ":/1970s Gloria Gaynor Sprite.png", ":/1970s Led Zeppelin Jimmy Page Sprite.png", ":/1970s Ramones Sprite.png", ":/1970s Stevie Wonder Sprite.png"};
+        imagePaths = {":/1970s Bob Marley Sprite.png", ":/1970s Gloria Gaynor Sprite.png", ":/1970s Led Zeppelin Sprite.png", ":/1970s Ramones Sprite.png", ":/1970s Stevie Wonder Sprite.png"};
         names = {"Bob Marley", "Gloria Gaynor", "Led Zeppelin", "The Ramones", "Stevie Wonder"};
         m1 = "qrc:/BobMarley_CouldYouBeLoved.mp3";
         m2 = "qrc:/GloriaGaynor_IWillSurvive.mp3";
@@ -190,7 +190,7 @@ void stageCreate::setEra(int era){
         emit sendFileForInfoBar(decadeInfo);
         break;
     case 9:
-        imagePaths = {":/1990s Mariah Carey Sprite.png", ":/1990s Nirvana Kurt Cobain Sprite.png", ":/1990s Tupac Sprite.png", ":/1990s Notorious B.I.G Sprite.png", ":/1990s Oasis Sprite.png"};
+        imagePaths = {":/1990s Mariah Carey Sprite.png", ":/1990s Nirvana Sprite.png", ":/1990s Tupac Sprite.png", ":/1990s Notorious B.I.G Sprite.png", ":/1990s Oasis Sprite.png"};
         names = {"Mariah Carey", "Nirvana", "2Pac", "Notorious B.I.G.", "Oasis"};
         m1 = "qrc:/MariahCarey_Fantasy.mp3";
         m2 = "qrc:/Nirvana_SmellsLikeTeenSpirit.mp3";
