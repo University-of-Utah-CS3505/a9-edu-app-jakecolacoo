@@ -34,7 +34,6 @@
         <file>1970s Gloria Gaynor Sprite.png</file>
         <file>1970s Bob Marley Sprite.png</file>
         <file>1960s The Supremes Sprite.png</file>
-        <file>1960s The Beatles Sprite.png</file>
         <file>1960s Jimi Hendrix Sprite.png</file>
         <file>1960s James Brown Sprite.png</file>
         <file>1960s Bob Dylan Sprite.png</file>
@@ -64,5 +63,6 @@
         <file>1970s Ramones Sprite.png</file>
         <file>1920s Louis Armstrong.png</file>
         <file>1990s Nirvana Sprite.png</file>
+        <file>1960s The Beatles Sprite.png</file>
     </qresource>
 </RCC>
