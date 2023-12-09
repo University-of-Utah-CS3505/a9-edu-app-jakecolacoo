@@ -10,15 +10,12 @@
         <file>1950sIcon.png</file>
         <file>1940sIcon.png</file>
         <file>1920 Will The Lion Smith Sprite.png</file>
-        <file>1920 Louis Armstring Sprite.png</file>
         <file>1920 King Oliver Sprite.png</file>
         <file>1920 Jelly Roll Morton Sprite.png</file>
         <file>2000s The White Stripes Sprite.png</file>
-        <file>1990s Mariah Carey Sprite.png</file>
         <file>2000s Jay Z Sprite.png</file>
         <file>2000s Daft Punk Sprite.png</file>
         <file>1990s Tupac Sprite.png</file>
-        <file>1990s Oasis Sprite.png</file>
         <file>1990s Notorious B.I.G Sprite.png</file>
         <file>1990s Nirvana Kurt Cobain Sprite.png</file>
         <file>1990s Nirvana Krist Novoselic Sprite.png</file>
@@ -30,7 +27,6 @@
         <file>1980s Madonna Sprite.png</file>
         <file>1980s Bruce Springsteen Sprite.png</file>
         <file>1970s Stevie Wonder Sprite.png</file>
-        <file>1970s Ramones Sprite.png</file>
         <file>1970s Led Zeppelin Robert Plant Sprite.png</file>
         <file>1970s Led Zeppelin John Paul Jones Sprite.png</file>
         <file>1970s Led Zeppelin John Bonham.png</file>
@@ -63,5 +59,9 @@
         <file>1970s Led Zeppelin Sprite.png</file>
         <file>1930s Duke Ellington Sprite.png</file>
         <file>1920s Sidney Bechet Sprite.png</file>
+        <file>1990s Oasis Sprite.png</file>
+        <file>1990s Mariah Carey Sprite.png</file>
+        <file>1970s Ramones Sprite.png</file>
+        <file>1920s Louis Armstrong.png</file>
     </qresource>
 </RCC>
