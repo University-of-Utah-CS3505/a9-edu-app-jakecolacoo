@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     aud = new QAudioOutput;
     player->setAudioOutput(aud);/* we can use this player to play the background music for start menu */
-    aud->setVolume(100);
+    aud->setVolume(.3);
     connect(otherWindow, &Form::mainWindowComeBack, this, &MainWindow::mainBack);
     connect(quizWindow, &Quiz::mainWindowComeBack, this, &MainWindow::mainBack);
 

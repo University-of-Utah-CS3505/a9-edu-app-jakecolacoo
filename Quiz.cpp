@@ -53,7 +53,7 @@ Quiz::Quiz(MainWindow* mainWindow,QWidget *parent)
 
     musicAud = new QAudioOutput;
     musicPlayer->setAudioOutput(musicAud);
-    musicAud->setVolume(60);
+    musicAud->setVolume(.3);
 
     connect(m_mainWindow, &MainWindow::playQuizMusic, this, &Quiz::playMusic);
     connect(m_mainWindow, &MainWindow::setUpQuizButtons, this, &Quiz::setUpButtons);
@@ -440,9 +440,12 @@ void Quiz::gameOver()
     ui->finalScore->setText(userScore);
     ui->finalScore->setVisible(true);
     ui->pushButton->setEnabled(true);
+
+    musicPlayer->stop();
 }
 
 void Quiz::on_retryButton_clicked()
 {
     setUpQuiz();
+    musicPlayer->play();
 }
