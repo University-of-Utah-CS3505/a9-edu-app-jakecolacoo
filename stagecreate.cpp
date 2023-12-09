@@ -45,7 +45,7 @@ void stageCreate::setEra(int era){
         //send background music(same as the rest cases)
         break;
     case 2:
-        imagePaths = {":/1920 Will The Lion Smith Sprite.png", ":/1920 Jelly Roll Morton Sprite.png", ":/1920 Louis Armstring Sprite.png", ":/1920 Sidney Bechet Sprite.png", ":/1920 King Oliver Sprite.png"};
+        imagePaths = {":/1920 Will The Lion Smith Sprite.png", ":/1920 Jelly Roll Morton Sprite.png", ":/1920 Louis Armstring Sprite.png", ":/1920s Sidney Bechet Sprite.png", ":/1920 King Oliver Sprite.png"};
         names = {"Willie Smith", "Jelly Roll Morton", "Louis Armstrong", "Sydney Bechet", "King Oliver"};
         m1 = "qrc:/WillieSmith_EchoesOfSpring.mp3";
         m2 = "qrc:/JellyRollMorton_HonkyTonkBlues.mp3";

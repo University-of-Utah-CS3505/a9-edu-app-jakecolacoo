@@ -44,6 +44,7 @@ private:
     QAudioOutput *musicAud;
     stageCreate* stage;
     void SetDecadeButtonImage(QString filePath);
+    void resetButtons();
 
 signals:
     void mainWindowComeBack();

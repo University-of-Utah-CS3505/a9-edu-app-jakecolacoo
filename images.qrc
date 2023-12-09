@@ -1,10 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>Cheryl_James.png</file>
-        <file>I_forgot.png</file>
-        <file>Mariah_Carey.png</file>
-        <file>Sandra_Denton.png</file>
-        <file>Bob Marley Sprite.png</file>
         <file>1920sIcon.png</file>
         <file>1930sIcon.png</file>
         <file>2000sIcon.png</file>
@@ -15,7 +10,6 @@
         <file>1950sIcon.png</file>
         <file>1940sIcon.png</file>
         <file>1920 Will The Lion Smith Sprite.png</file>
-        <file>1920 Sidney Bechet Sprite.png</file>
         <file>1920 Louis Armstring Sprite.png</file>
         <file>1920 King Oliver Sprite.png</file>
         <file>1920 Jelly Roll Morton Sprite.png</file>
@@ -32,7 +26,6 @@
         <file>1980s Salt-N-Pepa Sandra Denton Sprite.png</file>
         <file>1980s Salt-N-Pepa DJ Spinderella Sprite.png</file>
         <file>1980s Salt-N-Pepa Cheryl James.png</file>
-        <file>1980s Prince Sprite.png</file>
         <file>1980s Michael Jackson Sprite.png</file>
         <file>1980s Madonna Sprite.png</file>
         <file>1980s Bruce Springsteen Sprite.png</file>
@@ -60,12 +53,15 @@
         <file>1940s Ella Fitzgerald Sprite.png</file>
         <file>1940s Edith Piaf Sprite.png</file>
         <file>1930s Glen Miller Sprite.png</file>
-        <file>1930s Duke Ellington Sprite.png</file>
         <file>1930s Bing Crosby Sprite.png</file>
-        <file>1930s Billie Holiday Sprite.png</file>
         <file>1930s Benny Goodman Sprite.png</file>
         <file>2000s Lady Gaga Sprite.png</file>
         <file>2000s Kanye Sprite.png</file>
         <file>alien1.png</file>
+        <file>1980s Prince Sprite.png</file>
+        <file>1930s Billie Holiday Sprite.png</file>
+        <file>1970s Led Zeppelin Sprite.png</file>
+        <file>1930s Duke Ellington Sprite.png</file>
+        <file>1920s Sidney Bechet Sprite.png</file>
     </qresource>
 </RCC>

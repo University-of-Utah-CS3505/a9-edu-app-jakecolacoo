@@ -135,22 +135,35 @@ void Form::setEra(QStringList image, QStringList names, int decadeNum){
     }
 
     // Uncheck any previously checked buttons
-    ui->music1->setCheckable(false);
-    ui->music1->setCheckable(true);
-    ui->music2->setCheckable(false);
-    ui->music2->setCheckable(true);
-    ui->music3->setCheckable(false);
-    ui->music3->setCheckable(true);
-    ui->music4->setCheckable(false);
-    ui->music4->setCheckable(true);
-    ui->music5->setCheckable(false);
-    ui->music5->setCheckable(true);
+    resetButtons();
 }
 
 //Make the player to play the music at the path
 void Form::playMusic(QByteArray path){
     musicPlayer->setSource(QUrl::fromEncoded(path));
     musicPlayer->play();
+}
+
+void Form::resetButtons() {
+    ui->music1->setAutoExclusive(false);
+    ui->music1->setChecked(false);
+    ui->music1->setAutoExclusive(true);
+
+    ui->music2->setAutoExclusive(false);
+    ui->music2->setChecked(false);
+    ui->music2->setAutoExclusive(true);
+
+    ui->music3->setAutoExclusive(false);
+    ui->music3->setChecked(false);
+    ui->music3->setAutoExclusive(true);
+
+    ui->music4->setAutoExclusive(false);
+    ui->music4->setChecked(false);
+    ui->music4->setAutoExclusive(true);
+
+    ui->music5->setAutoExclusive(false);
+    ui->music5->setChecked(false);
+    ui->music5->setAutoExclusive(true);
 }
 
 void Form::SetDecadeButtonImage(QString filePath) {
@@ -162,6 +175,7 @@ void Form::SetDecadeButtonImage(QString filePath) {
 
 void Form::stopMusic(){
     musicPlayer->stop();
+    resetButtons();
 }
 
 void Form::setInfoBar(QString filePath) {

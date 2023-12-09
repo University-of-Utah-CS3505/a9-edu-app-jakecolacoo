@@ -5,13 +5,13 @@
 #include <random>
 
 SceneWidget::SceneWidget(QWidget *parent) : QWidget(parent),
-    world(b2Vec2(0.0f, 10.0f)),
+    world(b2Vec2(0.0f, 6.0f)),
     timer(this),
     createTime(this)
 {
     // Define the ground body.
     b2BodyDef groundBodyDef;
-    groundBodyDef.position.Set(0.0f, 48.0f);
+    groundBodyDef.position.Set(0.0f, 38.0f);
 
     // Call the body factory which allocates memory for the ground body
     // from a pool and creates the ground box shape (also from a pool).
@@ -29,7 +29,7 @@ SceneWidget::SceneWidget(QWidget *parent) : QWidget(parent),
 
     connect(&timer, &QTimer::timeout, this, &SceneWidget::updateWorld);
     connect(&createTime, &QTimer::timeout, this, &SceneWidget::createBody);
-    createTime.start(1000);
+    createTime.start(250);
     timer.start(10);
 }
 
