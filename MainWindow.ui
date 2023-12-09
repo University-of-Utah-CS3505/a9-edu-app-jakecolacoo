@@ -218,19 +218,6 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="quizButton">
-    <property name="geometry">
-     <rect>
-      <x>720</x>
-      <y>410</y>
-      <width>51</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>quiz</string>
-    </property>
-   </widget>
    <widget class="SceneWidget" name="widget" native="true">
     <property name="geometry">
      <rect>
@@ -389,9 +376,21 @@
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
+    <widget class="QPushButton" name="quizButton">
+     <property name="geometry">
+      <rect>
+       <x>670</x>
+       <y>500</y>
+       <width>121</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Take The Quiz!</string>
+     </property>
+    </widget>
    </widget>
    <zorder>widget</zorder>
-   <zorder>quizButton</zorder>
    <zorder>button1930</zorder>
    <zorder>button1950</zorder>
    <zorder>button1960</zorder>
