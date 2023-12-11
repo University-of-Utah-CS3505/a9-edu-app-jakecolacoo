@@ -6,6 +6,7 @@
 #include "Form.h"
 #include "Quiz.h"
 #include "QPushButton"
+#include "QLabel"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -50,10 +51,13 @@ private:
     Quiz* quizWindow;
     QMediaPlayer *player;
     QAudioOutput *aud;
-
     void SetButtonImage(QPushButton* button, QString filePath);
+    QLabel *backgroundImageLabel;
+
 public slots:
     void mainBack();
+    void resizeEvent(QResizeEvent *event) override;
+    void setupBackgroundImage(const QSize &size);
 
 signals:
 //    void clicked1920();

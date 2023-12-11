@@ -10,6 +10,8 @@ MainWindow::MainWindow(QWidget *parent)
     , player(new QMediaPlayer(this))
 {
     ui->setupUi(this);
+    backgroundImageLabel = new QLabel(this);
+    setupBackgroundImage(this->size());
     aud = new QAudioOutput;
     player->setAudioOutput(aud);/* we can use this player to play the background music for start menu */
     aud->setVolume(.3);
@@ -120,4 +122,21 @@ void MainWindow:: on_quizButton_clicked()
     quizWindow->show();
     emit playQuizMusic();
     emit setUpQuizButtons();
+}
+
+void MainWindow::setupBackgroundImage(const QSize &size) {
+    QPixmap originalPixmap(":/Line TuneTimeline.png");
+    QPixmap scaledPixmap = originalPixmap.scaled(size, Qt::KeepAspectRatioByExpanding);
+    backgroundImageLabel->setPixmap(scaledPixmap);
+    backgroundImageLabel->setGeometry(this->rect());
+    backgroundImageLabel->lower(); // Ensure the label is behind other widgets
+    // Adjust the geometry to move the image up
+    int yOffset = -30; // Negative value to move up
+    backgroundImageLabel->setGeometry(0, yOffset, size.width(), size.height());
+}
+
+void MainWindow::resizeEvent(QResizeEvent *event)
+{
+    QMainWindow::resizeEvent(event);
+    setupBackgroundImage(event->size());
 }
