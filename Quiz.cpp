@@ -91,7 +91,7 @@ void Quiz::setUpQuiz()
                   {"qrc:/TheBeatles_HereComesTheSun.mp3", 1960}, {"qrc:/TheEverlyBrothers_AllIHavetoDoIsDream.mp3", 1950},
                   {"qrc:/TheSupremes_StopintheNameofLove.mp3", 1960}, {"qrc:/ThroughTheWire.mp3", 2000},
                   {"qrc:/VeraLynn_We_llMeetAgain.mp3", 1940}, {"qrc:/WhiteStripes_SevenNationArmy.mp3", 2000},
-                  {"qrc:/WillieSmith_EchoesOfSpring.mp3", 1920}, {"qrc:/MariahCarey_Fantasy.mp3", 2000}};
+                  {"qrc:/WillieSmith_EchoesOfSpring.mp3", 1920}, {"qrc:/MariahCarey_Fantasy.mp3", 1990}};
 
     // Move all paths to vector
     for(auto elem : musicPaths)

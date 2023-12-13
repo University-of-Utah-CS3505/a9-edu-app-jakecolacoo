@@ -15,8 +15,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(stageWindow, &Form::mainWindowComeBack, this, &MainWindow::mainBack);
     connect(quizWindow, &Quiz::mainWindowComeBack, this, &MainWindow::mainBack);
 
-
-
     int id = QFontDatabase::addApplicationFont(":/PixeloidSans-mLxMm.ttf");
     QString family = QFontDatabase::applicationFontFamilies(id).at(0);
     QFont font(family);
