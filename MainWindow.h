@@ -49,7 +49,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    Form* otherWindow;
+    Form* stageWindow;
     Quiz* quizWindow;
     QMediaPlayer *player;
     QAudioOutput *aud;

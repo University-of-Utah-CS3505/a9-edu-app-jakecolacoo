@@ -418,8 +418,8 @@
     <widget class="QLabel" name="title">
      <property name="geometry">
       <rect>
-       <x>260</x>
-       <y>230</y>
+       <x>200</x>
+       <y>240</y>
        <width>391</width>
        <height>31</height>
       </rect>
@@ -432,21 +432,28 @@
      <property name="text">
       <string>TUNE TIMELINE</string>
      </property>
-    </widget>
-    <widget class="QLabel" name="explain">
-     <property name="geometry">
-      <rect>
-       <x>260</x>
-       <y>320</y>
-       <width>611</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>A Brief Guide to Musical History</string>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </widget>
+   <widget class="QLabel" name="explain">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>310</y>
+      <width>611</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>A Brief Guide to Contemporary Musical History</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <zorder>widget</zorder>
    <zorder>button1920</zorder>
    <zorder>button1940</zorder>
    <zorder>button1960</zorder>
@@ -456,7 +463,7 @@
    <zorder>button1970</zorder>
    <zorder>button1950</zorder>
    <zorder>button1930</zorder>
-   <zorder>widget</zorder>
+   <zorder>explain</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -464,7 +471,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>37</height>
     </rect>
    </property>
   </widget>

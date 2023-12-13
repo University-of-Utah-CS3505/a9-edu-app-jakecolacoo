@@ -5,17 +5,14 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
-    , otherWindow(new Form(this))
+    , stageWindow(new Form(this))
     , quizWindow(new Quiz(this))
     , player(new QMediaPlayer(this))
 {
     ui->setupUi(this);
     backgroundImageLabel = new QLabel(this);
     setupBackgroundImage(this->size());
-    aud = new QAudioOutput;
-    player->setAudioOutput(aud);/* we can use this player to play the background music for start menu */
-    aud->setVolume(.3);
-    connect(otherWindow, &Form::mainWindowComeBack, this, &MainWindow::mainBack);
+    connect(stageWindow, &Form::mainWindowComeBack, this, &MainWindow::mainBack);
     connect(quizWindow, &Quiz::mainWindowComeBack, this, &MainWindow::mainBack);
 
 
@@ -51,13 +48,14 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
-    delete otherWindow;
+    delete stageWindow;
 }
 
 void MainWindow::SetButtonImage(QPushButton* button, QString filePath) {
     QPixmap map(filePath);
     QIcon icon(map);
     button->setIcon(icon);
+    button->setVisible(false);
 }
 
 void MainWindow::mainBack()
@@ -68,63 +66,63 @@ void MainWindow::mainBack()
 void MainWindow::on_button1920_clicked()
 {
     this->close();
-    otherWindow->show();
+    stageWindow->show();
     emit eraChange(2);
 }
 
 void MainWindow::on_button1930_clicked()
 {
     this->close();
-    otherWindow->show();
+    stageWindow->show();
     emit eraChange(3);
 }
 
 void MainWindow::on_button1940_clicked()
 {
     this->close();
-    otherWindow->show();
+    stageWindow->show();
     emit eraChange(4);
 }
 
 void MainWindow::on_button1950_clicked()
 {
     this->close();
-    otherWindow->show();
+    stageWindow->show();
     emit eraChange(5);
 }
 
 void MainWindow::on_button1960_clicked()
 {
     this->close();
-    otherWindow->show();
+    stageWindow->show();
     emit eraChange(6);
 }
 
 void MainWindow::on_button1970_clicked()
 {
     this->close();
-    otherWindow->show();
+    stageWindow->show();
     emit eraChange(7);
 }
 
 void MainWindow::on_button1980_clicked()
 {
     this->close();
-    otherWindow->show();
+    stageWindow->show();
     emit eraChange(8);
 }
 
 void MainWindow::on_button1990_clicked()
 {
     this->close();
-    otherWindow->show();
+    stageWindow->show();
     emit eraChange(9);
 }
 
 void MainWindow::on_button2000_clicked()
 {
     this->close();
-    otherWindow->show();
+    stageWindow->show();
     emit eraChange(0);
 }
 
@@ -159,5 +157,16 @@ void MainWindow::on_start_clicked()
     ui->start->hide();
     ui->title->hide();
     ui->explain->hide();
+
+    ui->button1920->setVisible(true);
+    ui->button1930->setVisible(true);
+    ui->button1940->setVisible(true);
+    ui->button1950->setVisible(true);
+    ui->button1960->setVisible(true);
+    ui->button1970->setVisible(true);
+    ui->button1980->setVisible(true);
+    ui->button1990->setVisible(true);
+    ui->button2000->setVisible(true);
+
 }
 

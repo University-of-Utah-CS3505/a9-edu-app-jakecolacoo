@@ -44,7 +44,7 @@ Form::Form(MainWindow* mainWindow,QWidget *parent)
 
     musicAud = new QAudioOutput;
     musicPlayer->setAudioOutput(musicAud);
-    musicAud->setVolume(.3);
+    musicAud->setVolume(1);
 
 //    connect(m_mainWindow, &MainWindow::clicked1920, this, &Form::Stuffs1920);
     connect(m_mainWindow, &MainWindow::eraChange, stage, &stageCreate::setEra);

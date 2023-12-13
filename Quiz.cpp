@@ -53,7 +53,7 @@ Quiz::Quiz(MainWindow* mainWindow,QWidget *parent)
 
     musicAud = new QAudioOutput;
     musicPlayer->setAudioOutput(musicAud);
-    musicAud->setVolume(.3);
+    musicAud->setVolume(1);
 
     connect(m_mainWindow, &MainWindow::playQuizMusic, this, &Quiz::playMusic);
     connect(m_mainWindow, &MainWindow::setUpQuizButtons, this, &Quiz::setUpButtons);
