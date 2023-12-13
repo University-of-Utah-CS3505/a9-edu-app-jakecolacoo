@@ -18,6 +18,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(otherWindow, &Form::mainWindowComeBack, this, &MainWindow::mainBack);
     connect(quizWindow, &Quiz::mainWindowComeBack, this, &MainWindow::mainBack);
 
+
+
     int id = QFontDatabase::addApplicationFont(":/PixeloidSans-mLxMm.ttf");
     QString family = QFontDatabase::applicationFontFamilies(id).at(0);
     QFont font(family);
@@ -34,6 +36,16 @@ MainWindow::MainWindow(QWidget *parent)
     SetButtonImage(ui->button1980, ":/1980sIcon.png");
     SetButtonImage(ui->button1990, ":/1990sIcon.png");
     SetButtonImage(ui->button2000, ":/2000sIcon.png");
+
+    QImage backgroundImage(":/TuneTimelineBackground.png");
+
+    // Convert the QImage to QPixmap
+    QPixmap backgroundPixmap = QPixmap::fromImage(backgroundImage);
+
+    int w = ui->bg->width();
+    int h = ui->bg->height();
+    ui->bg->setPixmap(backgroundPixmap.scaled(w,h));
+
 }
 
 MainWindow::~MainWindow()
@@ -140,3 +152,12 @@ void MainWindow::resizeEvent(QResizeEvent *event)
     QMainWindow::resizeEvent(event);
     setupBackgroundImage(event->size());
 }
+
+void MainWindow::on_start_clicked()
+{
+    ui->bg->hide();
+    ui->start->hide();
+    ui->title->hide();
+    ui->explain->hide();
+}
+

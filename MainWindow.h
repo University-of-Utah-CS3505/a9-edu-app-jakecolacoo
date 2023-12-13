@@ -45,6 +45,8 @@ private slots:
 
     void on_quizButton_clicked();
 
+    void on_start_clicked();
+
 private:
     Ui::MainWindow *ui;
     Form* otherWindow;

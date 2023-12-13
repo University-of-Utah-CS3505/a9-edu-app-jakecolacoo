@@ -65,5 +65,6 @@
         <file>1990s Nirvana Sprite.png</file>
         <file>1960s The Beatles Sprite.png</file>
         <file>Line TuneTimeline.png</file>
+        <file>TuneTimelineBackground.png</file>
     </qresource>
 </RCC>

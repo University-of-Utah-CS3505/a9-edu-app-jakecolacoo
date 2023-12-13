@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>609</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -389,17 +389,74 @@
       <string>Take The Quiz!</string>
      </property>
     </widget>
+    <widget class="QLabel" name="bg">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>801</width>
+       <height>591</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="start">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>270</y>
+       <width>80</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>START </string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="title">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>230</y>
+       <width>391</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>26</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>TUNE TIMELINE</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="explain">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>320</y>
+       <width>611</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>A Brief Guide to Musical History</string>
+     </property>
+    </widget>
    </widget>
-   <zorder>widget</zorder>
-   <zorder>button1930</zorder>
-   <zorder>button1950</zorder>
-   <zorder>button1960</zorder>
+   <zorder>button1920</zorder>
    <zorder>button1940</zorder>
-   <zorder>button1970</zorder>
+   <zorder>button1960</zorder>
    <zorder>button1980</zorder>
    <zorder>button2000</zorder>
    <zorder>button1990</zorder>
-   <zorder>button1920</zorder>
+   <zorder>button1970</zorder>
+   <zorder>button1950</zorder>
+   <zorder>button1930</zorder>
+   <zorder>widget</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -407,7 +464,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>37</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
