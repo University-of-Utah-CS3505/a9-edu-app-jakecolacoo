@@ -47,18 +47,18 @@ void SceneWidget::paintEvent(QPaintEvent *) {
         QImage image(imagePath);
 
         b2Vec2 position = body->GetPosition();
-        float angle = body->GetAngle() * 180.0 / M_PI; // 转换为度
+        float angle = body->GetAngle() * 180.0 / M_PI; // Convert to degrees
 
-        // 设置变换矩阵
+        // Set transformation matrix
         QTransform transform;
         transform.translate(position.x * 20, position.y * 20);
         transform.rotate(angle);
         painter.setTransform(transform);
 
-        // 绘制图片
+        // Draw pictures
         painter.drawImage(-image.width() / 2, -image.height() / 2, image); // 调整锚点到图片中心
 
-        // 重置变换矩阵
+        // Reset transformation matrix
         painter.resetTransform();
     }
     painter.end();
@@ -66,8 +66,6 @@ void SceneWidget::paintEvent(QPaintEvent *) {
 
 void SceneWidget::updateWorld() {
     world.Step(1.0/60.0, 6, 2);
-
-//    size_t old = bodies.size();
 
     for (auto it = bodies.begin(); it != bodies.end(); ) {
         b2Body* body = it->first;
@@ -80,10 +78,6 @@ void SceneWidget::updateWorld() {
             ++it;
         }
     }
-
-//    if(bodies.size() != old){
-//        qDebug() << bodies.size();
-//    }
 
     update();
 }

@@ -144,8 +144,7 @@ void MainWindow::setupBackgroundImage(const QSize &size) {
     backgroundImageLabel->setPixmap(scaledPixmap);
     backgroundImageLabel->setGeometry(this->rect());
     backgroundImageLabel->lower(); // Ensure the label is behind other widgets
-    // Adjust the geometry to move the image up
-    int yOffset = -30; // Negative value to move up
+    int yOffset = -30; // Adjust the geometry to move the image up, negative value to move up
     backgroundImageLabel->setGeometry(0, yOffset, size.width(), size.height());
 }
 

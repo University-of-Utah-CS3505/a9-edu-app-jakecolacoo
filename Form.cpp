@@ -46,7 +46,6 @@ Form::Form(MainWindow* mainWindow,QWidget *parent)
     musicPlayer->setAudioOutput(musicAud);
     musicAud->setVolume(1);
 
-//    connect(m_mainWindow, &MainWindow::clicked1920, this, &Form::Stuffs1920);
     connect(m_mainWindow, &MainWindow::eraChange, stage, &stageCreate::setEra);
     connect(stage, &stageCreate::sendInfor, this, &Form::setEra);
     connect(stage, &stageCreate::playMusic, this, &Form::playMusic);
@@ -62,14 +61,11 @@ Form::~Form()
     delete ui;
 }
 
-//When the go back button clicked
 void Form::on_pushButton_clicked()
 {
     this->close();
     emit mainWindowComeBack();
     musicPlayer->stop();
-    // MainOne.show();
-    // MainOne.player->stop();
 }
 
 //use to set the current era's musication sprites and names
