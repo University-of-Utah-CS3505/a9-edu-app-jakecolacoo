@@ -1,3 +1,9 @@
+/*
+ * An interactive QWidget integrating the Box2D physics engine for dynamic object simulation within a Qt application.
+ * It features ground body definition, real-time physics updates, dynamic body creation and rendering,
+ * and user interaction handling. This class showcases the use of physics in GUI applications,
+ * offering engaging and interactive elements that respond to physics laws.
+*/
 #include "SceneWidget.h"
 #include <QPainter>
 #include <QDebug>

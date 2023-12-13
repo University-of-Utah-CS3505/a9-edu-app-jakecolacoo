@@ -1,3 +1,10 @@
+/*
+ * This quiz.h file outlines all of the quiz related methods. The quiz will randomly play an artist's music
+ * and allows the user to choose between four randomly generated eras. There should be ui feedback on whether
+ * the answer is right or wrong and it should also show the song and artist. There is a tracker for right or
+ * wrong answers, and a game over screen after 10 songs.
+*/
+
 #ifndef QUIZ_H
 #define QUIZ_H
 
@@ -5,6 +12,7 @@
 #include <QtMultiMedia/QtMultiMedia>
 
 namespace Ui {
+
 class Quiz;
 }
 
@@ -16,7 +24,7 @@ class Quiz : public QWidget
 
 public:
     /**
-     * @brief Construct a new Quiz object
+     * @brief Constructor for the quiz window that sets up the background, fonts, and audio settings.
      *
      * @param mainWindow Pointer to the MainWindow object
      * @param parent Pointer to the parent QWidget object (default is nullptr)
@@ -29,33 +37,28 @@ public:
     ~Quiz();
 
 private slots:
-    /**
-     * @brief Slot for handling push button click event
+    /*!
+     * \brief Code after the back button has been pressed to return back to the tune timeline window.
      */
     void on_pushButton_clicked();
-
-    /**
-     * @brief Slot for handling era button 1 click event
+    /*!
+     * \brief Code after the first era button is clicked by the user
      */
     void on_eraButton1_clicked();
-
-    /**
-     * @brief Slot for handling era button 2 click event
+    /*!
+     * \brief Code after the second era button is clicked by the user
      */
     void on_eraButton2_clicked();
-
-    /**
-     * @brief Slot for handling era button 3 click event
+    /*!
+     * \brief Code after the third era button is clicked by the user
      */
     void on_eraButton3_clicked();
-
-    /**
-     * @brief Slot for handling era button 4 click event
+    /*!
+     * \brief Code after the fourth era button is clicked by the user
      */
     void on_eraButton4_clicked();
-
-    /**
-     * @brief Slot for handling retry button click event
+    /*!
+     * \brief Code after the retry button is clicked to re-create all maps and generate buttons again
      */
     void on_retryButton_clicked();
 

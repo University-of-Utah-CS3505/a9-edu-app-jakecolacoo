@@ -1,3 +1,9 @@
+/*
+ * This section of the code is responsible for creating a user interface that allows users to select different musical eras.
+ * The UI is implemented using the Box2D physics engine. The unique aspect of this UI is its interactive nature,
+ * where musical notes are simulated to drop from the top of the screen, each note representing a different era.
+ * These notes respond to physics, creating a dynamic and engaging user experience.
+ */
 #include "MainWindow.h"
 #include <QMediaPlayer>
 #include "ui_MainWindow.h"
