@@ -28,15 +28,15 @@ MainWindow::MainWindow(QWidget *parent)
     QApplication::setFont(font);
 
     // Set icons for all buttons
-    SetButtonImage(ui->button1920, ":/1920sIcon.png");
-    SetButtonImage(ui->button1930, ":/1930sIcon.png");
-    SetButtonImage(ui->button1940, ":/1940sIcon.png");
-    SetButtonImage(ui->button1950, ":/1950sIcon.png");
-    SetButtonImage(ui->button1960, ":/1960sIcon.png");
-    SetButtonImage(ui->button1970, ":/1970sIcon.png");
-    SetButtonImage(ui->button1980, ":/1980sIcon.png");
-    SetButtonImage(ui->button1990, ":/1990sIcon.png");
-    SetButtonImage(ui->button2000, ":/2000sIcon.png");
+    setButtonImage(ui->button1920, ":/1920sIcon.png");
+    setButtonImage(ui->button1930, ":/1930sIcon.png");
+    setButtonImage(ui->button1940, ":/1940sIcon.png");
+    setButtonImage(ui->button1950, ":/1950sIcon.png");
+    setButtonImage(ui->button1960, ":/1960sIcon.png");
+    setButtonImage(ui->button1970, ":/1970sIcon.png");
+    setButtonImage(ui->button1980, ":/1980sIcon.png");
+    setButtonImage(ui->button1990, ":/1990sIcon.png");
+    setButtonImage(ui->button2000, ":/2000sIcon.png");
 
     QImage backgroundImage(":/TuneTimelineBackground.png");
 
@@ -55,7 +55,7 @@ MainWindow::~MainWindow()
     delete stageWindow;
 }
 
-void MainWindow::SetButtonImage(QPushButton* button, QString filePath) {
+void MainWindow::setButtonImage(QPushButton* button, QString filePath) {
     QPixmap map(filePath);
     QIcon icon(map);
     button->setIcon(icon);

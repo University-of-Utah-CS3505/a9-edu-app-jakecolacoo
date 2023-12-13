@@ -70,14 +70,14 @@ private:
     MainWindow* m_mainWindow; ///< Pointer to the MainWindow object
     QMediaPlayer *musicPlayer; ///< Pointer to the QMediaPlayer object
     QAudioOutput *musicAud; ///< Pointer to the QAudioOutput object
-    stageCreate* stage; ///< Pointer to the stageCreate object
+    StageCreate* stage; ///< Pointer to the stageCreate object
 
     /**
      * @brief Set the Decade Button Image
      *
      * @param filePath Path to the image file
      */
-    void SetDecadeButtonImage(QString filePath);
+    void setDecadeButtonImage(QString filePath);
 
     /**
      * @brief Reset all buttons

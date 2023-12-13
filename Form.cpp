@@ -13,7 +13,7 @@ Form::Form(MainWindow* mainWindow,QWidget *parent)
     , ui(new Ui::Form)
     , m_mainWindow(mainWindow)
     , musicPlayer(new QMediaPlayer(this))
-    , stage(new stageCreate(this))
+    , stage(new StageCreate(this))
 {
     ui->setupUi(this);
     QPalette palette;
@@ -46,11 +46,11 @@ Form::Form(MainWindow* mainWindow,QWidget *parent)
     musicPlayer->setAudioOutput(musicAud);
     musicAud->setVolume(1);
 
-    connect(m_mainWindow, &MainWindow::eraChange, stage, &stageCreate::setEra);
-    connect(stage, &stageCreate::sendInfor, this, &Form::setEra);
-    connect(stage, &stageCreate::playMusic, this, &Form::playMusic);
-    connect(stage, &stageCreate::stopMusic, this, &Form::stopMusic);
-    connect(stage, &stageCreate::sendFileForInfoBar, this, &Form::setInfoBar);
+    connect(m_mainWindow, &MainWindow::eraChange, stage, &StageCreate::setEra);
+    connect(stage, &StageCreate::sendInfor, this, &Form::setEra);
+    connect(stage, &StageCreate::playMusic, this, &Form::playMusic);
+    connect(stage, &StageCreate::stopMusic, this, &Form::stopMusic);
+    connect(stage, &StageCreate::sendFileForInfoBar, this, &Form::setInfoBar);
     connect(ui->decadeButton, &QPushButton::clicked, this, [this]() {
         stage->play(6);
     });
@@ -102,31 +102,31 @@ void Form::setEra(QStringList image, QStringList names, int decadeNum){
 
     switch (decadeNum) {
     case 0:
-        SetDecadeButtonImage(":/2000.png");
+        setDecadeButtonImage(":/2000.png");
         break;
     case 2:
-        SetDecadeButtonImage(":/1920.png");
+        setDecadeButtonImage(":/1920.png");
         break;
     case 3:
-        SetDecadeButtonImage(":/1930.png");
+        setDecadeButtonImage(":/1930.png");
         break;
     case 4:
-        SetDecadeButtonImage(":/1940.png");
+        setDecadeButtonImage(":/1940.png");
         break;
     case 5:
-        SetDecadeButtonImage(":/1950.png");
+        setDecadeButtonImage(":/1950.png");
         break;
     case 6:
-        SetDecadeButtonImage(":/1960.png");
+        setDecadeButtonImage(":/1960.png");
         break;
     case 7:
-        SetDecadeButtonImage(":/1970.png");
+        setDecadeButtonImage(":/1970.png");
         break;
     case 8:
-        SetDecadeButtonImage(":/1980.png");
+        setDecadeButtonImage(":/1980.png");
         break;
     case 9:
-        SetDecadeButtonImage(":/1990.png");
+        setDecadeButtonImage(":/1990.png");
         break;
     }
 
@@ -162,7 +162,7 @@ void Form::resetButtons() {
     ui->music5->setAutoExclusive(true);
 }
 
-void Form::SetDecadeButtonImage(QString filePath) {
+void Form::setDecadeButtonImage(QString filePath) {
     QPixmap map(filePath);
     QIcon icon(map);
     ui->decadeButton->setIcon(icon);

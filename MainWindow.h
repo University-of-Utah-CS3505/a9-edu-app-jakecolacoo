@@ -100,7 +100,7 @@ private:
      * @param button Pointer to the QPushButton object
      * @param filePath Path to the image file
      */
-    void SetButtonImage(QPushButton* button, QString filePath);
+    void setButtonImage(QPushButton* button, QString filePath);
 
     QLabel *backgroundImageLabel; ///< Pointer to the QLabel object for background image
 

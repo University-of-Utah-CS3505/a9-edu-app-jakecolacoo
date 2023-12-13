@@ -6,9 +6,9 @@
  * class, so it can prevent affecting other code
 */
 
-#include "stagecreate.h"
+#include "Stagecreate.h"
 
-stageCreate::stageCreate(QWidget *parent)
+StageCreate::StageCreate(QWidget *parent)
     : QWidget{parent}
 {
 
@@ -18,7 +18,7 @@ stageCreate::stageCreate(QWidget *parent)
 // Such that : 0 is 2000's
 //             2 is 1920's
 //             3 is 1930's and so on
-void stageCreate::setEra(int era){
+void StageCreate::setEra(int era){
     switch (era) {
     case 0:
         // Set sprites paths and corresponding names(same as the rest cases)
@@ -214,7 +214,7 @@ void stageCreate::setEra(int era){
     }
 }
 
-void stageCreate::play(int i){
+void StageCreate::play(int i){
     switch (i) {
     case 1:
         emit playMusic(m1);

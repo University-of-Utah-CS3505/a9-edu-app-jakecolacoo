@@ -7,7 +7,7 @@
  * @class stageCreate
  * @brief The stageCreate class inherits from QWidget and represents a custom widget for creating stages.
  */
-class stageCreate : public QWidget
+class StageCreate : public QWidget
 {
     Q_OBJECT
 public:
@@ -15,7 +15,7 @@ public:
      * @brief stageCreate Constructor.
      * @param parent The parent widget, null pointer by default.
      */
-    explicit stageCreate(QWidget *parent = nullptr);
+    explicit StageCreate(QWidget *parent = nullptr);
 
 private:
     QStringList imagePaths; ///< Paths to the sprite images.
