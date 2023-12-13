@@ -70,7 +70,7 @@ signals:
     void sendFileForInfoBar(QString filePath);
 
     /**
-     * @brief Sends information for the info bar.
+     * @brief Sends currentDecade, the artists images in that decade, and those artists songs to update ui.
      * @param image The image to send.
      * @param names The names to send.
      * @param decadeNum The decade number to send.

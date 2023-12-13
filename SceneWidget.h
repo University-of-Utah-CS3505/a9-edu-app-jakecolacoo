@@ -19,6 +19,9 @@ public:
      */
     explicit SceneWidget(QWidget *parent = nullptr);
 
+    /**
+     * @brief paintEvent handles event of drawing physics object
+     */
     void paintEvent(QPaintEvent *);
 
 signals:
