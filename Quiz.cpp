@@ -1,6 +1,8 @@
 /*
- * View class of the stage
- * Use to set up the sprites and all other UI stuff
+ * This class implements all of the quiz related methods. The quiz will randomly play an artist's music
+ * and allows the user to choose between four randomly generated eras. There should be ui feedback on whether
+ * the answer is right or wrong and it should also show the song and artist. There is a tracker for right or
+ * wrong answers, and a game over screen after 10 songs.
 */
 
 #include "Quiz.h"
@@ -13,7 +15,6 @@
 #include<vector>
 #include <algorithm>
 #include <random>
-#include<QDebug>
 
 Quiz::Quiz(MainWindow* mainWindow,QWidget *parent)
     : QWidget(parent)
@@ -70,6 +71,7 @@ void Quiz::setUpQuiz()
     amountCorrect = 0;
     amountIncorrect = 0;
 
+    // Each music path with the correct era
     musicPaths = {{"qrc:/2Pac_CaliforniaLove.mp3", 1990}, {"qrc:/BennyGoodman_DontBeThatWay.mp3", 1930},
                   {"qrc:/Biggie_MoMoneyMoProblems.mp3", 1990}, {"qrc:/BillieHoliday_GodBlessTheChild.mp3", 1930},
                   {"qrc:/BingCrosby_ISurrenderDear.mp3", 1930}, {"qrc:/BobDylan_LikeARollingStone.mp3", 1960},
@@ -93,13 +95,37 @@ void Quiz::setUpQuiz()
                   {"qrc:/VeraLynn_We_llMeetAgain.mp3", 1940}, {"qrc:/WhiteStripes_SevenNationArmy.mp3", 2000},
                   {"qrc:/WillieSmith_EchoesOfSpring.mp3", 1920}, {"qrc:/MariahCarey_Fantasy.mp3", 2000}};
 
+    // Map of music paths and artists to view on screen
+    artistEra = {{"qrc:/2Pac_CaliforniaLove.mp3", "2Pac from the 1990's"}, {"qrc:/BennyGoodman_DontBeThatWay.mp3", "Benny Goodman from the 1930's"},
+                  {"qrc:/Biggie_MoMoneyMoProblems.mp3", "Notorious B.I.G from the 1990's"}, {"qrc:/BillieHoliday_GodBlessTheChild.mp3", "Billie Holiday from the 1930's"},
+                  {"qrc:/BingCrosby_ISurrenderDear.mp3", "Bing Crosby from the 1930's"}, {"qrc:/BobDylan_LikeARollingStone.mp3", "Bob Dylan from the 1960's"},
+                  {"qrc:/BobMarley_CouldYouBeLoved.mp3", "Bob Marley from the 1970's"}, {"qrc:/BruceSpringsteen_BornToRun.mp3", "Bruce Springsteen from the 1980's"},
+                  {"qrc:/Chuck_Berry_-_Johnny_B_Goode.mp3", "Chuck Berry from the 1950's"}, {"qrc:/DaftPunk_OneMoreTime.mp3", "Daft Punk from the 2000's"},
+                  {"qrc:/DukeEllington_Caravan.mp3", "Duke Ellington from the 1930's"}, {"qrc:/EdithPiaf_LaVieEnRose.mp3", "Edith Piaf from the 1940's"},
+                  {"qrc:/EllaFitzgerald_DreamALittleDreamOfMe.mp3","Ella Fitzgerald from the 1940's"}, {"qrc:/ElvisPresley_HoundDog.mp3","Elvis Presley from the 1950's"},
+                  {"qrc:/FrankSinatra_FlyMeToTheMoon.mp3", "Frank Sinatra from the 1940's"}, {"qrc:/GlenMiller_IntheMood.mp3", "Glenn Miller from the 1930's"},
+                  {"qrc:/GloriaGaynor_IWillSurvive.mp3", "Gloria Gaynor from the 1970's"}, {"qrc:/JamesBrown_IGotYou(IFeelGood).mp3", "James Brown from the 1960's"},
+                  {"qrc:/JellyRollMorton_HonkyTonkBlues.mp3","Jelly Roll Morton from the 1920's"}, {"qrc:/JimiHendrix_PurpleHaze.mp3", "Jimi Hendix from the 1960's"},
+                  {"qrc:/JohnnyCash_IWalkTheLine.mp3","Johnny Cash from the 1950's"}, {"qrc:/KingOliver_DoctorJazz.mp3", "King Oliver from the 1920's"},
+                  {"qrc:/LadyGaga_BadRomance.mp3","Lady Gaga from the 2000's"}, {"qrc:/LedZeppelin_ImmigrantSong.mp3","Led Zeppelin from the 1970's"},
+                  {"qrc:/LittleRichard_TuttiFruti.mp3","Little Richard from the 1950's"}, {"qrc:/Louis Armstrong - What A Wonderful World.mp3","Louis Armstrong from the 1920's"},
+                  {"qrc:/Madonna_MaterialGirl.mp3", "Madonna from the 1980's"}, {"qrc:/MichaelJacson_BeatIt.mp3","Michael Jackson from the 1980's"},
+                  {"qrc:/N.K.COLE_L.O.V.E.mp3","Nat King Cole from the 1940's"}, {"qrc:/Nirvana_SmellsLikeTeenSpirit.mp3","Nirvana from the 1990's"},
+                  {"qrc:/Oasis_DontLookBackInAnger.mp3","Oasis from the 1990's"}, {"qrc:/JayZ_EmpireStateOfMind.mp3","Jay Z from the 2000's"},
+                  {"qrc:/Prince_Kiss.mp3","Prince from the 1980's"}, {"qrc:/Ramones_BlitzkriegBop.mp3","Ramones from the 1970's"},
+                  {"qrc:/SidneyBechet_WildCatBlues.mp3","Sidney Bechet from the 1920's"}, {"qrc:/StevieWonder_SirDuke.mp3","Stevie Wonder from 1970's"},
+                  {"qrc:/TheBeatles_HereComesTheSun.mp3","The Beatles from the 1960's"}, {"qrc:/TheEverlyBrothers_AllIHavetoDoIsDream.mp3","The Everly Brothers from the 1950's"},
+                  {"qrc:/TheSupremes_StopintheNameofLove.mp3","The Supremes from the 1960's"}, {"qrc:/ThroughTheWire.mp3","Kanye West from the 2000's"},
+                  {"qrc:/VeraLynn_We_llMeetAgain.mp3","Vera Lynn from the 1940's"}, {"qrc:/WhiteStripes_SevenNationArmy.mp3", "The White Stripes from the 2000's"},
+                  {"qrc:/WillieSmith_EchoesOfSpring.mp3","Willie Smith from the 1920's"}, {"qrc:/MariahCarey_Fantasy.mp3","Mariah Carey from the 2000's"}};
+
     // Move all paths to vector
     for(auto elem : musicPaths)
     {
         vecOfPaths.push_back(elem.first);
     }
 
-    // Randomly shuffle the order
+    // Randomly shuffle the order every time the program is reloaded
     auto rd = std::random_device {};
     auto rng = std::default_random_engine { rd() };
     std::shuffle(std::begin(vecOfPaths), std::end(vecOfPaths), rng);
@@ -124,7 +150,7 @@ void Quiz::setUpQuiz()
     ui->eraButton3->setEnabled(true);
     ui->eraButton4->setEnabled(true);
 
-    // Set up ui correct buttons
+    // Set up correct and incorrect ui buttons
     QString incorrectSet = "Incorrect: ";
     incorrectSet+=std::to_string(amountIncorrect);
     ui->incorrectScore->setText(incorrectSet);
@@ -146,7 +172,6 @@ void Quiz::playMusic()
 {
     musicPlayer->setSource(QUrl::fromEncoded(vecOfPaths[questionNumber]));
     musicPlayer->play();
-    qDebug()<<vecOfPaths[questionNumber];
 }
 
 void Quiz::setUpButtons()
@@ -162,7 +187,10 @@ void Quiz::setUpButtons()
     ui->eraButton4->setEnabled(true);
     ui->pushButton->setEnabled(true);
 
+    //Randomly choose which button is going to be the correct button
     correctButton = QRandomGenerator::global()->bounded(1,5);
+
+    // Set the correct era from the map
     correctEra = musicPaths[vecOfPaths[questionNumber]];
     QString correctText = QString::number(musicPaths[vecOfPaths[questionNumber]]);
 
@@ -292,6 +320,9 @@ void Quiz::on_eraButton1_clicked()
         amountCorrect++;
         scoreText+=std::to_string(amountCorrect);
         ui->correctScore->setText(scoreText);
+
+        // Show the correct answer after clicking on button
+        ui->artistLabel->setText("<font color='white'>" + artistEra[vecOfPaths[questionNumber]]);
     }
     else
     {
@@ -301,6 +332,8 @@ void Quiz::on_eraButton1_clicked()
         QString scoreText = "Incorrect: ";
         scoreText+=std::to_string(amountIncorrect);
         ui->incorrectScore->setText(scoreText);
+
+        ui->artistLabel->setText("<font color='white'>" + artistEra[vecOfPaths[questionNumber]]);
     }
     ui->eraButton1->setEnabled(false);
     ui->eraButton2->setEnabled(false);
@@ -309,11 +342,13 @@ void Quiz::on_eraButton1_clicked()
     ui->pushButton->setEnabled(false);
     questionNumber++;
 
-    QTimer::singleShot(2000, [=]()
+    QTimer::singleShot(3000, [=]()
     {
        ui->rightOrWrong->setText("");
        playMusic();
        setUpButtons();
+
+       ui->artistLabel->setText("");
     });
 }
 
@@ -327,6 +362,8 @@ void Quiz::on_eraButton2_clicked()
         QString scoreText = "Correct: ";
         scoreText+=std::to_string(amountCorrect);
         ui->correctScore->setText(scoreText);
+
+        ui->artistLabel->setText("<font color='white'>" + artistEra[vecOfPaths[questionNumber]]);
     }
     else
     {
@@ -336,6 +373,8 @@ void Quiz::on_eraButton2_clicked()
         QString scoreText = "Incorrect: ";
         scoreText+=std::to_string(amountIncorrect);
         ui->incorrectScore->setText(scoreText);
+
+        ui->artistLabel->setText("<font color='white'>" + artistEra[vecOfPaths[questionNumber]]);
     }
     ui->eraButton1->setEnabled(false);
     ui->eraButton2->setEnabled(false);
@@ -345,11 +384,13 @@ void Quiz::on_eraButton2_clicked()
     questionNumber++;
 
     // Set delay until right or wrong text disappears and music plays
-    QTimer::singleShot(2000, [=]()
+    QTimer::singleShot(3000, [=]()
     {
        ui->rightOrWrong->setText("");
        playMusic();
        setUpButtons();
+
+       ui->artistLabel->setText("");
     });
 }
 
@@ -363,6 +404,8 @@ void Quiz::on_eraButton3_clicked()
         QString scoreText = "Correct: ";
         scoreText+=std::to_string(amountCorrect);
         ui->correctScore->setText(scoreText);
+
+        ui->artistLabel->setText("<font color='white'>" + artistEra[vecOfPaths[questionNumber]]);
     }
     else
     {
@@ -372,6 +415,8 @@ void Quiz::on_eraButton3_clicked()
         QString scoreText = "Incorrect: ";
         scoreText+=std::to_string(amountIncorrect);
         ui->incorrectScore->setText(scoreText);
+
+        ui->artistLabel->setText("<font color='white'>" + artistEra[vecOfPaths[questionNumber]]);
     }
     ui->eraButton1->setEnabled(false);
     ui->eraButton2->setEnabled(false);
@@ -380,11 +425,13 @@ void Quiz::on_eraButton3_clicked()
     ui->pushButton->setEnabled(false);
     questionNumber++;
 
-    QTimer::singleShot(2000, [=]()
+    QTimer::singleShot(3000, [=]()
     {
        ui->rightOrWrong->setText("");
        playMusic();
        setUpButtons();
+
+       ui->artistLabel->setText("");
     });
 }
 
@@ -398,6 +445,8 @@ void Quiz::on_eraButton4_clicked()
         QString scoreText = "Correct: ";
         scoreText+=std::to_string(amountCorrect);
         ui->correctScore->setText(scoreText);
+
+        ui->artistLabel->setText("<font color='white'>" + artistEra[vecOfPaths[questionNumber]]);
     }
     else
     {
@@ -407,6 +456,8 @@ void Quiz::on_eraButton4_clicked()
         QString scoreText = "Incorrect: ";
         scoreText+=std::to_string(amountIncorrect);
         ui->incorrectScore->setText(scoreText);
+
+        ui->artistLabel->setText("<font color='white'>" + artistEra[vecOfPaths[questionNumber]]);
     }
     ui->eraButton1->setEnabled(false);
     ui->eraButton2->setEnabled(false);
@@ -415,11 +466,13 @@ void Quiz::on_eraButton4_clicked()
     ui->pushButton->setEnabled(false);
     questionNumber++;
 
-    QTimer::singleShot(2000, [=]()
+    QTimer::singleShot(3000, [=]()
     {
         ui->rightOrWrong->setText("");
         playMusic();
         setUpButtons();
+
+        ui->artistLabel->setText("");
     });
 }
 
@@ -447,5 +500,5 @@ void Quiz::gameOver()
 void Quiz::on_retryButton_clicked()
 {
     setUpQuiz();
-    musicPlayer->play();
+    playMusic();
 }
