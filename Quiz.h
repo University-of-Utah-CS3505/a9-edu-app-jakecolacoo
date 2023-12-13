@@ -98,6 +98,7 @@ private:
     void gameOver();
 
     std::map<QByteArray, int> musicPaths; ///< Map of music paths
+    std::map<QByteArray, QString> artistEra; ///< Map of eras corresponding to each artist
     std::vector<QByteArray> vecOfPaths; ///< Vector of paths
 
     int questionNumber; ///< Current question number
