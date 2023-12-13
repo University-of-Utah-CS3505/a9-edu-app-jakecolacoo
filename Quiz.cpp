@@ -117,7 +117,7 @@ void Quiz::setUpQuiz()
                   {"qrc:/TheBeatles_HereComesTheSun.mp3","The Beatles from the 1960's"}, {"qrc:/TheEverlyBrothers_AllIHavetoDoIsDream.mp3","The Everly Brothers from the 1950's"},
                   {"qrc:/TheSupremes_StopintheNameofLove.mp3","The Supremes from the 1960's"}, {"qrc:/ThroughTheWire.mp3","Kanye West from the 2000's"},
                   {"qrc:/VeraLynn_We_llMeetAgain.mp3","Vera Lynn from the 1940's"}, {"qrc:/WhiteStripes_SevenNationArmy.mp3", "The White Stripes from the 2000's"},
-                  {"qrc:/WillieSmith_EchoesOfSpring.mp3","Willie Smith from the 1920's"}, {"qrc:/MariahCarey_Fantasy.mp3","Mariah Carey from the 2000's"}};
+                  {"qrc:/WillieSmith_EchoesOfSpring.mp3","Willie Smith from the 1920's"}, {"qrc:/MariahCarey_Fantasy.mp3","Mariah Carey from the 1990's"}};
 
     // Move all paths to vector
     for(auto elem : musicPaths)
