@@ -28,7 +28,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Send me away</string>
+    <string>Back to TuneTimeline</string>
    </property>
   </widget>
   <widget class="QLabel" name="question">
@@ -204,6 +204,33 @@
    </property>
    <property name="text">
     <string>Retry</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="artistLabel">
+   <property name="geometry">
+    <rect>
+     <x>38</x>
+     <y>490</y>
+     <width>661</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
  </widget>

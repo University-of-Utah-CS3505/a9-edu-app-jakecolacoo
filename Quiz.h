@@ -43,6 +43,7 @@ private:
     void setOtherButtons(int button1, int button2, int button3);
     void gameOver();
     std::map<QByteArray, int> musicPaths;
+    std::map<QByteArray, QString> artistEra;
     std::vector<QByteArray> vecOfPaths;
 
     int questionNumber;
